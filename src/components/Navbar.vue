@@ -6,7 +6,7 @@ const isOpen = ref(false)
 </script>
 
 <template>
-    <nav class="w-full bg-[var(--color-background-soft)] text-[var(--color-text)] font-sans shadow-md">
+    <nav class="w-full bg-[var(--color-background-soft)] text-[var(--color-text)] shadow-md">
         <div class="max-w-screen-xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->

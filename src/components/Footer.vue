@@ -8,7 +8,7 @@ const scrollToTop = () => {
 
 <template>
     <footer
-        class="bg-[var(--color-background-soft)] text-[var(--color-text)] font-sans py-8 border-t border-[var(--color-border)]">
+        class="bg-[var(--color-background-soft)] text-[var(--color-text)] py-8 border-t border-[var(--color-border)]">
         <div class="max-w-7xl mx-auto px-4 text-center space-y-6">
             <!-- Navigacija -->
             <nav class="flex flex-wrap justify-center space-x-6">
