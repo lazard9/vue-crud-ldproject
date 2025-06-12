@@ -10,7 +10,7 @@ import DestinationsGrid from '../components/DestinationsGrid.vue';
             <HeroSection title="Plan your trip" subtitle="Choose your perfect destination" />
         </section>
 
-        <section class="max-w-screen-xl mx-auto px-4 mb-20">
+        <section class="max-w-4xl mx-auto px-4 mb-20">
             <CtaCardsContainer />
         </section>
 

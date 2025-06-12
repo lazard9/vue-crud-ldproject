@@ -1,8 +1,15 @@
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import logo from '@/assets/ldprojects-logo-520-min.png'
 
 const isOpen = ref(false)
+
+const route = useRoute()
+
+const isActiveLink = (path) => {
+    return route.path === path
+}
 </script>
 
 <template>
@@ -22,10 +29,11 @@ const isOpen = ref(false)
                         >Home</RouterLink
                     > -->
                     <RouterLink to="/destinations"
-                        class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">
+                        :class="[isActiveLink('/destinations') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                         Destinations</RouterLink>
                     <RouterLink to="/destinations/add"
-                        class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">Add
+                        :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
+                        Add
                         Destination</RouterLink>
                 </div>
 
@@ -42,10 +50,12 @@ const isOpen = ref(false)
             <!-- Mobile Menu -->
             <div v-if="isOpen" class="md:hidden mt-2 space-y-2 pb-4">
                 <!-- <RouterLink to="/" class="block px-2 py-1 hover:text-[var(--color-heading)] no-underline">Home</RouterLink> -->
-                <RouterLink to="/destinations" class="block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">
+                <RouterLink to="/destinations"
+                    :class="[isActiveLink('/destinations') ? 'text-[var(--color-heading)]' : '', 'block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Destinations</RouterLink>
                 <RouterLink to="/destinations/add"
-                    class="block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">Add Destination</RouterLink>
+                    :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
+                    Add Destination</RouterLink>
             </div>
         </div>
     </nav>

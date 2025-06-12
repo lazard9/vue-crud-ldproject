@@ -1,8 +1,15 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import logo from '@/assets/ldprojects-logo-520-min.png'
 
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+const route = useRoute()
+
+const isActiveLink = (path) => {
+    return route.path === path
 }
 </script>
 
@@ -13,15 +20,15 @@ const scrollToTop = () => {
             <!-- Navigacija -->
             <nav class="flex flex-wrap justify-center space-x-6">
                 <RouterLink to="/"
-                    class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">
+                    :class="[isActiveLink('/') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Home
                 </RouterLink>
                 <RouterLink to="/destinations"
-                    class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">
+                    :class="[isActiveLink('/destinations') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Destinations
                 </RouterLink>
                 <RouterLink to="/destinations/add"
-                    class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200">
+                    :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Add Destination
                 </RouterLink>
                 <a href="#" @click.prevent="scrollToTop"
