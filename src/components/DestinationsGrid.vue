@@ -1,23 +1,38 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import DestinationCard from './DestinationCard.vue';
-import data from '@/data/destinations.json';
+// import data from '@/data/destinations.json';
 
 const props = defineProps({
     limit: {
         type: Number,
-        default: data.length
+        required: false,
+        validator: val => val >= 0
     }
 });
 
 const destinations = ref([]);
 
-onMounted(() => {
-    destinations.value = data;
+onMounted(async () => {
+    // destinations.value = data;
+
+    try {
+        const response = await fetch('http://localhost:8080/destinations')
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+        destinations.value = data
+    } catch (err) {
+        error.value = err.message
+        console.error('Fetch error:', err)
+    }
 });
 
 const limitedDestinations = computed(() => {
-    return destinations.value.slice(0, props.limit);
+    return typeof props.limit === 'number'
+        ? destinations.value.slice(0, props.limit)
+        : destinations.value;
 });
 </script>
 
