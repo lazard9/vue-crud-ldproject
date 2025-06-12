@@ -12,20 +12,24 @@ const props = defineProps({
 });
 
 const destinations = ref([]);
+const error = ref(null);
+const loading = ref(true);
 
 onMounted(async () => {
     // destinations.value = data;
 
     try {
-        const response = await fetch('http://localhost:8080/destinations')
+        const response = await fetch('http://localhost:8080/destinations');
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const data = await response.json()
-        destinations.value = data
+        const data = await response.json();
+        destinations.value = data;
     } catch (err) {
-        error.value = err.message
-        console.error('Fetch error:', err)
+        error.value = err.message;
+        console.error('Fetch error:', err);
+    } finally {
+        loading.value = false;
     }
 });
 
