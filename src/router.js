@@ -5,6 +5,7 @@ const routes = [
     { path: '/destinations', component: () => import('./views/Destinations.vue') },
     { path: '/destinations/:slug', component: () => import('./views/DestinationSingle.vue') },
     { path: '/destinations/add', component: () => import('./views/DestinationAdd.vue') },
+    { path: '/:pathMatch(.*)*', component: () => import('./views/NotFound.vue') }
 ]
 
 const router = createRouter({
