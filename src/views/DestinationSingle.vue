@@ -1,9 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 // import data from '@/data/destinations.json';
 
 const route = useRoute();
+const router = useRouter(); // for redirect
 const destination = ref(null);
 const error = ref(null);
 
@@ -23,6 +24,27 @@ onMounted(async () => {
         console.error('Fetch error:', err);
     }
 });
+
+const deleteDestination = async () => {
+    if (!destination.value?.id) return;
+
+    const confirmed = confirm('Are you sure you want to delete this destination?');
+    if (!confirmed) return;
+
+    try {
+        const response = await fetch(`http://localhost:8080/destinations/${destination.value.id}`, {
+            method: 'DELETE',
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to delete: ${response.status}`);
+        }
+
+        router.push('/destinations'); // redirect
+    } catch (err) {
+        console.error('Delete error:', err);
+    }
+};
 </script>
 
 <template>
@@ -36,6 +58,17 @@ onMounted(async () => {
             </div>
             <div v-else>
                 <p>Destination not found.</p>
+            </div>
+            <div v-if="destination" class="mt-6 flex gap-4">
+                <router-link :to="`/destinations/edit/${destination.slug}`"
+                    class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition duration-200">
+                    Edit
+                </router-link>
+
+                <button @click="deleteDestination"
+                    class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 transition duration-200">
+                    Delete
+                </button>
             </div>
         </section>
     </main>
