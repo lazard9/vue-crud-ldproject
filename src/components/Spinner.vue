@@ -13,35 +13,19 @@ const props = defineProps({
 });
 
 const sizeClass = computed(() => {
-    // Tailwind nema baš svaki "3x" korak, zato biramo najbliže
     const sizes = {
-        '1': 'h-12 w-12',   // 3 * 4 = 12 (3rem)
-        '2': 'h-18 w-18',   // Tailwind nema h-18, pa možemo h-20 (5rem) ili h-[72px]
-        '3': 'h-24 w-24',   // 3 * 8 = 24 (6rem)
-        '4': 'h-28 w-28',   // 3 * 10 = 30, najbliže h-28 (7rem)
-        '5': 'h-36 w-36',   // Tailwind nema h-36, može se custom ili h-40 (10rem)
-        '6': 'h-48 w-48',   // 3 * 16 = 48 (12rem)
-        '7': 'h-56 w-56',   // Tailwind nema h-56, može h-56 (14rem)
-        '8': 'h-72 w-72',   // 3 * 24 = 72 (18rem)
-        '9': 'h-80 w-80',   // Tailwind nema h-80, može se custom
-        '10': 'h-96 w-96',  // 3 * 32 = 96 (24rem)
+        '1': 'h-12 w-12',           // 3rem = 48px
+        '2': 'h-20 w-20',           // 5rem = 80px
+        '3': 'h-28 w-28',           // 7rem = 112px
+        '4': 'h-[9rem] w-[9rem]',   // 9rem = 144px (custom)
+        '5': 'h-48 w-48',           // 12rem = 192px
+        '6': 'h-[15rem] w-[15rem]', // 15rem = 240px (custom)
+        '7': 'h-[18rem] w-[18rem]', // 18rem = 288px (custom)
+        '8': 'h-[21rem] w-[21rem]', // 21rem = 336px (custom)
+        '9': 'h-[22rem] w-[22rem]', // 22rem = 352px (custom, između 21 i 24)
+        '10': 'h-96 w-96',          // 24rem = 384px
     };
-    // Za veličine koje Tailwind nema u stock verziji, možeš koristiti JIT custom klase (npr. h-[72px]), ili ih prilagoditi po potrebi.
-
-    // Za primer, umesto h-18, h-36, h-56, h-80 možeš koristiti custom:
-    const fallbackSizes = {
-        '2': 'h-20 w-20',   // 5rem ~ 80px
-        '5': 'h-40 w-40',   // 10rem ~ 160px
-        '7': 'h-56 w-56',   // 14rem ~ 224px
-        '9': 'h-80 w-80',   // 20rem ~ 320px
-    };
-
-    if (!sizes[props.size]) {
-        return 'h-48 w-48';
-    }
-
-    // Ako klasa postoji u fallback i stock-u, uzmi stock; inače fallback
-    return sizes[props.size] || fallbackSizes[props.size] || 'h-48 w-48';
+    return sizes[props.size] || sizes['5'];
 });
 </script>
 

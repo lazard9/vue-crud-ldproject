@@ -62,7 +62,7 @@ const deleteDestination = async () => {
         <section class="max-w-4xl mx-auto px-4">
             <!-- Loader -->
             <div class="flex justify-center py-20" v-if="loading">
-                <Spinner v-if="loading" />
+                <Spinner />
             </div>
 
             <!-- Error message -->
