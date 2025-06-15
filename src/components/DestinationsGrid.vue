@@ -20,7 +20,7 @@ onMounted(async () => {
     // destinations.value = data;
 
     try {
-        const response = await fetch('http://localhost:8080/destinations');
+        const response = await fetch('/api/destinations');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

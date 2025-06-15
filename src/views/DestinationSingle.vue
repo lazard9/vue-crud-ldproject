@@ -17,7 +17,7 @@ const deleting = ref(false);
 onMounted(async () => {
     loading.value = true;
     try {
-        const response = await fetch(`http://localhost:8080/destinations?slug=${route.params.slug}`);
+        const response = await fetch(`/api/destinations?slug=${route.params.slug}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -40,7 +40,7 @@ const deleteDestination = async () => {
 
     deleting.value = true;
     try {
-        const response = await fetch(`http://localhost:8080/destinations/${destination.value.id}`, {
+        const response = await fetch(`/api/destinations/${destination.value.id}`, {
             method: 'DELETE',
         });
 
