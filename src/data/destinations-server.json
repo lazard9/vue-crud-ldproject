@@ -107,6 +107,15 @@
             "excerpt": "Temples, street food, and bustling markets.",
             "description": "Bangkok is a lively city offering ornate temples, bustling street markets, and some of the best street food in the world. Explore the Grand Palace, take a boat ride along the Chao Phraya River, and immerse yourself in Thai culture and hospitality.",
             "price": 700
+        },
+        {
+            "id": "9c6b8eb5-0544-4261-81ee-f478ce58777f",
+            "title": "Welcome to Belgrade",
+            "slug": "welcome-to-belgrade",
+            "destination": "Serbia",
+            "excerpt": "Modern meets traditional ",
+            "description": "Belgrade is the capital of the southeast European country of Serbia. Its most significant landmark is the Beogradska Tvrđava, an imposing fortress at the confluence of the Danube and the Sava rivers. The fort is a testament to the city’s strategic importance to the Roman, Byzantine, Ottoman, Serbian and Austrian empires, and it's now the site of several museums as well as Kalemegdan, a vast park.",
+            "price": 599
         }
     ]
 }
