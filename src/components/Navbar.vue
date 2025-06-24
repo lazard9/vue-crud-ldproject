@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import logo from '@/assets/ldprojects-logo-520-min.png'
+import logo from '@/assets/ldproject-logo-520-min.png'
 
 const isOpen = ref(false)
 
