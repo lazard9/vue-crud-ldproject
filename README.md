@@ -9,13 +9,14 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 
 ## Features
 
-- Vue 3 + Composition API with Vite
-- Vue Router with dynamic routes and slug validation
-- Add/Edit destination form with client-side validation
-- Unique slug generation logic
-- Automatic redirect to `/404` for non-existent slugs
-- Local mock backend via JSON Server
-- Minimal and clean UI built with custom components
+- ⚡ Vue 3 + Composition API with Vite
+- 🌐 Vue Router with dynamic routes and slug validation
+- 📝 Add/Edit destination form with client-side validation
+- 🔤 Unique slug generation logic
+- 🚫 Automatic redirect to `/404` for non-existent slugs
+- 🗂 Local mock backend via JSON Server
+- 🧩 Minimal and clean UI built with custom components
+- 🌙 Light/Dark mode with toggle button in the header
 
 ---
 
