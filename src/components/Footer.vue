@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import logo from '@/assets/ldprojects-logo-520-min.png'
+import logo from '@/assets/ldproject-logo-520-min.png'
 
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

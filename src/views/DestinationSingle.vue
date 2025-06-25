@@ -18,11 +18,18 @@ onMounted(async () => {
     loading.value = true;
     try {
         const response = await fetch(`/api/destinations?slug=${route.params.slug}`);
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
+
+        if (!data.length) {
+            router.replace('/404');
+            return
+        }
+
         destination.value = data[0] || null; // returns an array
     } catch (err) {
         error.value = err.message;
