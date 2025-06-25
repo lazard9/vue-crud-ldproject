@@ -21,33 +21,33 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 
 ## Project Structure
 
-📦 src/
-├── 📄 App.vue
-├── 📄 AppCompositionApi.vue
-├── 📄 AppOptionsApi.vue
-├── 📄 main.js
-├── 📄 router.js
-├── 📁 assets/
-│ └── 📄 (images, styles...)
-├── 📁 data/
-│ ├── 📄 destinations.json # Static data (optional)
-│ └── 📄 destinations-server.json # Used by JSON Server (live data)
-├── 📁 components/
-│ ├── 📄 CtaCard.vue
-│ ├── 📄 CtaCardsContainer.vue
-│ ├── 📄 DestinationCard.vue
-│ ├── 📄 DestinationForm.vue
-│ ├── 📄 DestinationsGrid.vue
-│ ├── 📄 Footer.vue
-│ ├── 📄 HeroSection.vue
-│ └── 📄 Spinner.vue
-└── 📁 views/
-├── 📄 Home.vue
-├── 📄 Destinations.vue
-├── 📄 DestinationSingle.vue
-├── 📄 DestinationAdd.vue
-├── 📄 DestinationEdit.vue
-└── 📄 NotFound.vue
+- 📦 src/
+  - 📄 App.vue
+  - 📄 AppCompositionApi.vue
+  - 📄 AppOptionsApi.vue
+  - 📄 main.js
+  - 📄 router.js
+  - 📁 assets/
+    - 📄 (images, styles...)
+  - 📁 data/
+    - 📄 destinations.json — Static data (optional)
+    - 📄 destinations-server.json — Used by JSON Server (live data)
+  - 📁 components/
+    - 📄 CtaCard.vue
+    - 📄 CtaCardsContainer.vue
+    - 📄 DestinationCard.vue
+    - 📄 DestinationForm.vue
+    - 📄 DestinationsGrid.vue
+    - 📄 Footer.vue
+    - 📄 HeroSection.vue
+    - 📄 Spinner.vue
+  - 📁 views/
+    - 📄 Home.vue
+    - 📄 Destinations.vue
+    - 📄 DestinationSingle.vue
+    - 📄 DestinationAdd.vue
+    - 📄 DestinationEdit.vue
+    - 📄 NotFound.vue
 
 ## Installation & Setup
 
@@ -96,9 +96,9 @@ Defined in `package.json`:
 
 ## Notes
 
--   Dynamic routes such as `/destinations/:slug` and `/destinations/edit/:slug` include logic to validate if the destination exists. If not, users are redirected to `/404`.
--   Form validation includes required fields and positive number checks for price.
--   Slugs are generated from the title and guaranteed to be unique via incremental suffixes if needed.
+- Dynamic routes such as `/destinations/:slug` and `/destinations/edit/:slug` include logic to validate if the destination exists. If not, users are redirected to `/404`.
+- Form validation includes required fields and positive number checks for price.
+- Slugs are generated from the title and guaranteed to be unique via incremental suffixes if needed.
 
 ## Inspiration
 
