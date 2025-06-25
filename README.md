@@ -16,7 +16,7 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 🚫 Automatic redirect to `/404` for non-existent slugs
 - 🗂 Local mock backend via JSON Server
 - 🧩 Minimal and clean UI built with custom components
-- 🌙 Light/Dark mode with toggle button in the header
+- 🌙 Light/Dark mode that automatically follows user device preference
 
 ---
 
