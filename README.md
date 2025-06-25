@@ -103,8 +103,7 @@ Defined in `package.json`:
 
 ## Inspiration
 
-Inspired by the jobs listing project from the [YouTube crash course](https://www.youtube.com/watch?v=VeNfHj6MhgA),
-but this project was written from scratch using custom components, routes, and logic.
+This project is based on the same core idea as the jobs listing project from the [YouTube crash course](https://www.youtube.com/watch?v=VeNfHj6MhgA). However, all code was written independently from scratch, following my own approach and implementation rather than copying existing code.
 
 ## License
 
