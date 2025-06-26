@@ -1,14 +1,25 @@
 <script setup>
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
-import logo from '@/assets/ldproject-logo-520-min.png'
+import { ref } from "vue";
+import { useRoute, useRouter, RouterLink } from "vue-router";
+import logo from "@/assets/ldproject-logo-520-min.png";
+import { logout } from "@/utils/auth";
 
-const isOpen = ref(false)
-
-const route = useRoute()
+const isOpen = ref(false);
 
 const isActiveLink = (path) => {
-    return route.path === path
+    return route.path === path;
+};
+
+const route = useRoute();
+const router = useRouter();
+
+const emit = defineEmits(['open-login', 'logout']);
+const { loggedIn } = defineProps({ loggedIn: Boolean })
+
+function handleLogout() {
+    logout();
+    emit('logout');
+    router.push('/');
 }
 </script>
 
@@ -28,13 +39,32 @@ const isActiveLink = (path) => {
                         class="hover:text-[var(--color-heading)] no-underline transition-colors duration-200"
                         >Home</RouterLink
                     > -->
-                    <RouterLink to="/destinations"
-                        :class="[isActiveLink('/destinations') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
+
+                    <RouterLink to="/destinations" :class="[
+                        isActiveLink('/destinations')
+                            ? 'text-[var(--color-heading)]'
+                            : '',
+                        'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200',
+                    ]">
                         Destinations</RouterLink>
-                    <RouterLink to="/destinations/add"
-                        :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
-                        Add
-                        Destination</RouterLink>
+
+                    <RouterLink v-if="loggedIn" to="/destinations/add" :class="[
+                        isActiveLink('/destinations/add')
+                            ? 'text-[var(--color-heading)]'
+                            : '',
+                        'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200',
+                    ]">
+                        Add Destination</RouterLink>
+
+                    <button v-if="!loggedIn" @click="emit('open-login')"
+                        class="block p-0 font-medium no-underline transition-colors duration-200  text-blue-600 hover:text-blue-500 dark:text-[#19b2e4] dark:hover:text-[#1cc6fd]">
+                        Login
+                    </button>
+
+                    <button v-if="loggedIn" @click="handleLogout"
+                        class="block p-0 font-medium no-underline transition-colors duration-200  text-[#7d3fe0] hover:text-[#9354fc]">
+                        Logout
+                    </button>
                 </div>
 
                 <!-- Hamburger Button (mobile) -->
@@ -50,12 +80,28 @@ const isActiveLink = (path) => {
             <!-- Mobile Menu -->
             <div v-if="isOpen" class="md:hidden mt-2 space-y-2 pb-4">
                 <!-- <RouterLink to="/" class="block px-2 py-1 hover:text-[var(--color-heading)] no-underline">Home</RouterLink> -->
-                <RouterLink to="/destinations"
-                    :class="[isActiveLink('/destinations') ? 'text-[var(--color-heading)]' : '', 'block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
+                <RouterLink to="/destinations" :class="[
+                    isActiveLink('/destinations')
+                        ? 'text-[var(--color-heading)]'
+                        : '',
+                    'block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200',
+                ]">
                     Destinations</RouterLink>
-                <RouterLink to="/destinations/add"
+
+                <RouterLink v-if="loggedIn" to="/destinations/add"
                     :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
-                    Add Destination</RouterLink>
+                    Add Destination
+                </RouterLink>
+
+                <button v-if="!loggedIn" @click="emit('open-login')"
+                    class="block px-2 py-1 font-medium no-underline transition-colors duration-200  text-blue-600 hover:text-blue-500 dark:text-[#19b2e4] dark:hover:text-[#1cc6fd]">
+                    Logout
+                </button>
+
+                <button v-if="loggedIn" @click="handleLogout"
+                    class="block px-2 py-1 font-medium no-underline transition-colors duration-200  text-[#7d3fe0] hover:text-[#9354fc]">
+                    Logout
+                </button>
             </div>
         </div>
     </nav>

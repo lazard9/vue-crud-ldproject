@@ -4,6 +4,8 @@ import { useRoute, useRouter } from 'vue-router';
 import Spinner from '../components/Spinner.vue';
 // import data from '@/data/destinations.json';
 
+const { loggedIn } = defineProps({ loggedIn: Boolean })
+
 const route = useRoute();
 const router = useRouter(); // for redirect
 
@@ -86,7 +88,7 @@ const deleteDestination = async () => {
                 <div v-else>
                     <p>Destination not found.</p>
                 </div>
-                <div v-if="destination" class="mt-6 flex gap-4">
+                <div v-if="loggedIn" class="mt-6 flex gap-4">
                     <router-link :to="`/destinations/edit/${destination.slug}`"
                         class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition duration-200">
                         Edit

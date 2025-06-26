@@ -1,16 +1,18 @@
 <script setup>
-import { useRoute } from 'vue-router'
-import logo from '@/assets/ldproject-logo-520-min.png'
+import { useRoute } from 'vue-router';
+import logo from '@/assets/ldproject-logo-520-min.png';
 
 const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 const route = useRoute()
 
 const isActiveLink = (path) => {
-    return route.path === path
+    return route.path === path;
 }
+
+const { loggedIn } = defineProps({ loggedIn: Boolean })
 </script>
 
 <template>
@@ -27,7 +29,7 @@ const isActiveLink = (path) => {
                     :class="[isActiveLink('/destinations') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Destinations
                 </RouterLink>
-                <RouterLink to="/destinations/add"
+                <RouterLink v-if="loggedIn" to="/destinations/add"
                     :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Add Destination
                 </RouterLink>

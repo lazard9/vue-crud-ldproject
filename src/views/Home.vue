@@ -2,6 +2,8 @@
 import HeroSection from '../components/HeroSection.vue';
 import CtaCardsContainer from '../components/CtaCardsContainer.vue';
 import DestinationsGrid from '../components/DestinationsGrid.vue';
+
+const { loggedIn } = defineProps({ loggedIn: Boolean })
 </script>
 
 <template>
@@ -11,7 +13,7 @@ import DestinationsGrid from '../components/DestinationsGrid.vue';
         </section>
 
         <section class="max-w-4xl mx-auto px-4 mb-20">
-            <CtaCardsContainer />
+            <CtaCardsContainer :loggedIn="loggedIn" />
         </section>
 
         <section class="max-w-screen-2xl mx-auto px-4">
