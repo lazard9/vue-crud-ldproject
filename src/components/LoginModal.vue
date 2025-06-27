@@ -1,20 +1,27 @@
 <script setup>
 import { ref } from "vue";
-const props = defineProps({});
+import { inject } from 'vue';
+import { onMounted } from 'vue';
 
-const emit = defineEmits(["close", "login"]);
+const auth = inject('auth');
 
 const copiedField = ref(null)
 const username = ref("");
 const password = ref("");
 const error = ref("");
 
-function handleLogin() {
-    if (username.value === "admin" && password.value === "password") {
-        document.cookie = "session=1; max-age=3600; path=/";
-        emit("login");
+const usernameInput = ref(null)
+onMounted(() => usernameInput.value?.focus());
+
+async function handleLogin() {
+    const result = auth.login(username.value, password.value);
+
+    if (result.success) {
+        username.value = "";
+        password.value = "";
+        error.value = "";
     } else {
-        error.value = "Invalid username or password.";
+        error.value = result.message;
     }
 }
 
@@ -40,7 +47,7 @@ function copyToClipboard(field) {
 
 <template>
     <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-        @click.self="$emit('close')">
+        @click.self="auth.closeLoginModal()">
         <div
             class="bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 rounded-lg shadow-lg w-full max-w-md p-6 transition-colors duration-500 mx-4">
             <h2 class="text-2xl font-semibold mb-4 text-zinc-700 dark:text-zinc-200">
@@ -59,10 +66,10 @@ function copyToClipboard(field) {
                     <code
                         class="bg-zinc-100 dark:bg-zinc-800 px-2 py-1 rounded cursor-pointer flex items-center gap-1 select-none"
                         @click="copyToClipboard('admin')" title="Click to copy">
-      admin
-      <span class="opacity-70" v-if="copiedField !== 'admin'">⧉</span>
-      <span v-else class="text-green-500 font-bold">✔</span>
-    </code>
+                        admin
+                        <span class="opacity-70" v-if="copiedField !== 'admin'">⧉</span>
+                        <span v-else class="text-green-500 font-bold">✔</span>
+                    </code>
                 </div>
 
                 <div class="flex items-center gap-2">
@@ -70,10 +77,10 @@ function copyToClipboard(field) {
                     <code
                         class="bg-zinc-100 dark:bg-zinc-800 px-2 py-1 rounded cursor-pointer flex items-center gap-1 select-none"
                         @click="copyToClipboard('password')" title="Click to copy">
-      password
-      <span class="opacity-70" v-if="copiedField !== 'password'">⧉</span>
-      <span v-else class="text-green-500 font-bold">✔</span>
-    </code>
+                        password
+                        <span class="opacity-70" v-if="copiedField !== 'password'">⧉</span>
+                        <span v-else class="text-green-500 font-bold">✔</span>
+                    </code>
                 </div>
             </div>
 
@@ -81,7 +88,7 @@ function copyToClipboard(field) {
             <form @submit.prevent="handleLogin" class="flex flex-col gap-4">
                 <div>
                     <label class="block text-sm mb-1">Username</label>
-                    <input v-model="username" type="text" autocomplete="username"
+                    <input ref="usernameInput" v-model="username" type="text" autocomplete="username"
                         class="w-full px-3 py-2 border border-zinc-300 dark:border-zinc-700 rounded bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
                 </div>
 
@@ -98,7 +105,7 @@ function copyToClipboard(field) {
                     </button>
                     <button type="button"
                         class="px-4 py-2 bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400 dark:hover:bg-zinc-600 text-zinc-800 dark:text-zinc-100 rounded transition"
-                        @click="$emit('close')">
+                        @click="auth.closeLoginModal()">
                         Cancel
                     </button>
                 </div>

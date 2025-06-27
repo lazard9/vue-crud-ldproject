@@ -1,7 +1,9 @@
 <script setup>
 import CtaCard from './CtaCard.vue'
+import { inject } from 'vue';
 
-const { loggedIn } = defineProps({ loggedIn: Boolean })
+const auth = inject('auth');
+const loggedIn = auth.loggedIn.value;
 </script>
 
 <template>

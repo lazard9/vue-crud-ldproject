@@ -1,5 +1,5 @@
 export function isLoggedIn() {
-    return document.cookie.includes("session=1")
+    return document.cookie.split('; ').some(cookie => cookie.startsWith('session=1'));
 }
 
 export function logout() {

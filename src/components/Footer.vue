@@ -1,5 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router';
+import { inject } from 'vue';
 import logo from '@/assets/ldproject-logo-520-min.png';
 
 const scrollToTop = () => {
@@ -12,7 +13,8 @@ const isActiveLink = (path) => {
     return route.path === path;
 }
 
-const { loggedIn } = defineProps({ loggedIn: Boolean })
+const auth = inject('auth');
+const loggedIn = auth.loggedIn.value;
 </script>
 
 <template>

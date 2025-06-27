@@ -17,12 +17,11 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 🗂 Local mock backend via JSON Server
 - 🧩 Minimal and clean UI built with custom components
 - 🌙 Light/Dark mode that automatically follows user device preference
-- Login modal with session cookie-based authentication (mock)
-- 🔒 Route and UI protection based on login state
-- 🎨 Centered single CTA card for better layout when user is not logged in
 - 🔐 Mock login system with session-based auth (user: `admin`, password: `password`)
 - ✅ Click-to-copy credentials for easier testing
 - 🎯 Conditional UI rendering based on login status
+- 🔒 Route and UI protection based on login state
+- 🎨 Centered single CTA card for better layout when user is not logged in
 
 ---
 
