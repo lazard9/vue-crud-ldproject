@@ -17,6 +17,12 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 🗂 Local mock backend via JSON Server
 - 🧩 Minimal and clean UI built with custom components
 - 🌙 Light/Dark mode that automatically follows user device preference
+- Login modal with session cookie-based authentication (mock)
+- 🔒 Route and UI protection based on login state
+- 🎨 Centered single CTA card for better layout when user is not logged in
+- 🔐 Mock login system with session-based auth (user: `admin`, password: `password`)
+- ✅ Click-to-copy credentials for easier testing
+- 🎯 Conditional UI rendering based on login status
 
 ---
 
@@ -94,6 +100,14 @@ Defined in `package.json`:
   "server": "json-server --watch src/data/destinations-server.json --port 8080"
 },
 ```
+
+## Usage
+
+1. Launch the app with `npm run dev`
+2. Click the "Login" button and use:
+   - Username: `admin`
+   - Password: `password`
+3. On successful login, new options will appear (e.g., Add Destination)
 
 ## Notes
 
