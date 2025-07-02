@@ -1,9 +1,10 @@
 <script setup>
+import { computed } from 'vue';
+import { useAuthStore } from '@/stores/auth';
 import CtaCard from './CtaCard.vue';
-import { inject } from 'vue';
 
-const auth = inject('auth');
-const loggedIn = auth.loggedIn.value;
+const auth = useAuthStore();
+const loggedIn = computed(() => auth.loggedIn);
 </script>
 
 <template>

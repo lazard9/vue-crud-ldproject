@@ -1,20 +1,21 @@
 <script setup>
-import { ref, inject } from "vue";
+import { ref, computed } from 'vue';
 import { useRoute, useRouter, RouterLink } from "vue-router";
+import { useAuthStore } from '@/stores/auth';
 import logo from "@/assets/ldproject-logo-520-min.png";
 
 const isOpen = ref(false);
 const route = useRoute();
 const router = useRouter();
-const auth = inject('auth');
-const loggedIn = auth.loggedIn.value;
+const auth = useAuthStore();
+const loggedIn = computed(() => auth.loggedIn);
 
 const isActiveLink = (path) => {
     return route.path === path;
 };
 
 function handleLogout() {
-    auth.onLogout();
+    auth.logout();
     router.push('/');
 }
 </script>

@@ -1,6 +1,7 @@
 <script setup>
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { inject } from 'vue';
+import { useAuthStore } from '@/stores/auth';
 import logo from '@/assets/ldproject-logo-520-min.png';
 
 const scrollToTop = () => {
@@ -13,8 +14,8 @@ const isActiveLink = (path) => {
     return route.path === path;
 }
 
-const auth = inject('auth');
-const loggedIn = auth.loggedIn.value;
+const auth = useAuthStore();
+const loggedIn = computed(() => auth.loggedIn);
 </script>
 
 <template>

@@ -1,9 +1,8 @@
 <script setup>
-import { ref } from "vue";
-import { inject } from 'vue';
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useAuthStore } from '@/stores/auth';
 
-const auth = inject('auth');
+const auth = useAuthStore();
 
 const copiedField = ref(null)
 const username = ref("");
@@ -14,7 +13,7 @@ const usernameInput = ref(null)
 onMounted(() => usernameInput.value?.focus());
 
 async function handleLogin() {
-    const result = auth.login(username.value, password.value);
+    const result = await auth.login(username.value, password.value);
 
     if (result.success) {
         username.value = "";
