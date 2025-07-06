@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import Spinner from '../components/Spinner.vue';
 // import data from '@/data/destinations.json';
@@ -13,6 +13,9 @@ const destination = ref(null);
 const error = ref(null);
 const loading = ref(true);
 const deleting = ref(false);
+
+const fallbackImage = 'minimalist-destination-card-01.jpg';
+const fallbackAlt = 'Minimalist illustration card';
 
 // destination.value = data.find(d => d.slug === route.params.slug);
 
@@ -64,11 +67,21 @@ const deleteDestination = async () => {
         deleting.value = false;
     }
 };
+
+const imageSrc = computed(() => {
+    if (!destination.value) return '';
+    const filename = destination.value.imageUrl || fallbackImage;
+    return new URL(`../assets/images/${filename}`, import.meta.url).href;
+});
+
+const imageAlt = computed(() => {
+    return destination.value?.imageAlt || fallbackAlt;
+});
 </script>
 
 <template>
     <main class="space-y-20 my-20">
-        <section class="max-w-4xl mx-auto px-4">
+        <section class="max-w-3xl mx-auto px-4">
             <!-- Loader -->
             <div class="flex justify-center py-20" v-if="loading">
                 <Spinner />
@@ -80,6 +93,7 @@ const deleteDestination = async () => {
             <!-- Destination details -->
             <div v-if="!loading && destination">
                 <div v-if="destination">
+                    <img :src="imageSrc" :alt="imageAlt" class="w-full max-h-96 object-cover rounded-xl mb-6" />
                     <h1 class="text-3xl font-bold mb-4">{{ destination.title }}</h1>
                     <p class="text-gray-600 mb-2"><strong>Location:</strong> {{ destination.destination }}</p>
                     <p class="text-lg font-light mb-4">{{ destination.description }}</p>

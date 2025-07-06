@@ -6,7 +6,14 @@
         "destination": "France",
         "excerpt": "The city of lights and romance.",
         "description": "Paris, the capital of France, is renowned for its art, gastronomy, and culture. Visit iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Wander along the Seine River and enjoy charming cafes on every corner.",
-        "price": 999
+        "price": 999,
+        "imageUrl": "paris-eiffel-tower.jpg",
+        "imageAlt": "Eiffel Tower at sunset in Paris",
+        "tags": [
+            "pinned",
+            "romantic",
+            "europe"
+        ]
     },
     {
         "id": "a3152ed3-51ce-4890-91c2-63a42cf0c3c3",
@@ -15,7 +22,15 @@
         "destination": "Japan",
         "excerpt": "Modern tech meets traditional temples.",
         "description": "Tokyo is a bustling metropolis blending ultramodern and traditional styles. Explore ancient temples, indulge in sushi and ramen, and experience cutting-edge technology in districts like Akihabara and Shibuya. Don't miss the beautiful cherry blossom season in spring.",
-        "price": 1299
+        "price": 1299,
+        "imageUrl": "tokyo-cherry-blossoms.jpg",
+        "imageAlt": "Cherry blossoms with Tokyo city skyline",
+        "tags": [
+            "pinned",
+            "modern",
+            "asia",
+            "technology"
+        ]
     },
     {
         "id": "6f2cb9f4-e3f8-4a5e-9f80-8c91d9d3e71d",
@@ -24,7 +39,15 @@
         "destination": "USA",
         "excerpt": "The city that never sleeps.",
         "description": "New York City is famous for its towering skyscrapers, diverse culture, and vibrant nightlife. Visit the Statue of Liberty, Central Park, Broadway theaters, and explore world-class museums like the MET. Enjoy a slice of authentic New York pizza while walking down Times Square.",
-        "price": 1099
+        "price": 1099,
+        "imageUrl": "new-york-central-park.jpg",
+        "imageAlt": "Aerial view of Central Park in New York City",
+        "tags": [
+            "pinned",
+            "urban",
+            "nightlife",
+            "america"
+        ]
     },
     {
         "id": "3dbf7e6f-0be4-4d71-b07b-73be4c1df7cd",
@@ -33,7 +56,15 @@
         "destination": "Australia",
         "excerpt": "Iconic opera house and sunny beaches.",
         "description": "Sydney offers stunning beaches like Bondi and Manly, the iconic Sydney Opera House, and the Sydney Harbour Bridge. Enjoy outdoor adventures, vibrant markets, and multicultural cuisine in this sunny city on the Australian coast.",
-        "price": 1199
+        "price": 1199,
+        "imageUrl": "sydney-opera-house.jpg",
+        "imageAlt": "Sydney Opera House and Harbour Bridge on a sunny day",
+        "tags": [
+            "top",
+            "beach",
+            "adventure",
+            "australia"
+        ]
     },
     {
         "id": "853579f6-cc17-4d90-850f-5ea290d3f3ef",
@@ -42,7 +73,15 @@
         "destination": "Italy",
         "excerpt": "History and art at every corner.",
         "description": "Rome is a treasure trove of ancient history and architecture. Explore the Colosseum, Roman Forum, Vatican Museums, and Sistine Chapel. Savor authentic Italian pasta and gelato while strolling through charming piazzas and fountains.",
-        "price": 899
+        "price": 899,
+        "imageUrl": "rome-colosseum-sunset.jpg",
+        "imageAlt": "Colosseum lit by sunset in Rome",
+        "tags": [
+            "top",
+            "historic",
+            "art",
+            "europe"
+        ]
     },
     {
         "id": "1c918a96-2e40-4f5b-bf62-6a6a2438a91d",
@@ -51,7 +90,15 @@
         "destination": "South Africa",
         "excerpt": "Natural beauty and rich culture.",
         "description": "Cape Town is famed for its breathtaking landscapes, including Table Mountain and Cape Point. Discover vibrant cultural neighborhoods, beautiful beaches, and world-class vineyards nearby. Adventure seekers can enjoy hiking, surfing, and safaris.",
-        "price": 1099
+        "price": 1099,
+        "imageUrl": "cape-town-table-mountain.jpg",
+        "imageAlt": "Table Mountain rising above Cape Town city",
+        "tags": [
+            "top",
+            "nature",
+            "adventure",
+            "africa"
+        ]
     },
     {
         "id": "a470cb61-0483-4f1e-96ee-c84d5481ad12",
@@ -60,7 +107,15 @@
         "destination": "Spain",
         "excerpt": "Gaudí’s masterpieces and Mediterranean vibes.",
         "description": "Barcelona is known for its unique architecture by Antoni Gaudí, including Sagrada Familia and Park Güell. Enjoy sunny beaches, delicious tapas, and a lively nightlife. Wander through the Gothic Quarter and the famous La Rambla street.",
-        "price": 950
+        "price": 950,
+        "imageUrl": "minimalist-destination-card-01.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "top",
+            "architecture",
+            "beach",
+            "europe"
+        ]
     },
     {
         "id": "b0f505e1-69f9-43e8-aed6-0163a937ea7a",
@@ -69,7 +124,15 @@
         "destination": "Turkey",
         "excerpt": "Where East meets West.",
         "description": "Istanbul is a city rich in history, culture, and stunning architecture. Explore the Hagia Sophia, Blue Mosque, and Grand Bazaar. Enjoy delicious Turkish cuisine and experience the unique blend of European and Asian influences.",
-        "price": 850
+        "price": 850,
+        "imageUrl": "minimalist-destination-card-02.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "culture",
+            "historic",
+            "asia-europe"
+        ]
     },
     {
         "id": "e09cd1cc-2821-4e0c-8105-98780ab05bc5",
@@ -78,7 +141,15 @@
         "destination": "Iceland",
         "excerpt": "Gateway to the land of fire and ice.",
         "description": "Reykjavik is a charming capital city surrounded by Iceland’s dramatic landscapes. Witness the Northern Lights, geothermal spas, and volcanic terrain. It’s perfect for nature lovers and those seeking unique outdoor experiences.",
-        "price": 1400
+        "price": 1400,
+        "imageUrl": "minimalist-destination-card-03.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "nature",
+            "adventure",
+            "cold"
+        ]
     },
     {
         "id": "0f083fc4-3f1e-41b6-97cf-8f0a13a434f9",
@@ -87,7 +158,15 @@
         "destination": "Morocco",
         "excerpt": "Exotic markets and desert adventures.",
         "description": "Marrakech captivates visitors with its colorful souks, beautiful palaces, and lively medinas. Explore the Jardin Majorelle, enjoy traditional Moroccan cuisine, and take trips into the Sahara Desert for unforgettable adventures.",
-        "price": 799
+        "price": 799,
+        "imageUrl": "minimalist-destination-card-04.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "culture",
+            "desert",
+            "africa"
+        ]
     },
     {
         "id": "8c85a431-8f8c-4a2b-b610-2ff2b594017f",
@@ -96,7 +175,15 @@
         "destination": "Brazil",
         "excerpt": "Carnival city with stunning landscapes.",
         "description": "Rio is famous for its Carnival festival, beautiful beaches like Copacabana, and the iconic Christ the Redeemer statue. Enjoy samba music, vibrant nightlife, and scenic views from Sugarloaf Mountain.",
-        "price": 1150
+        "price": 1150,
+        "imageUrl": "minimalist-destination-card-01.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "beach",
+            "festival",
+            "south-america"
+        ]
     },
     {
         "id": "59d11b36-e27a-47f7-9a30-f084816947cc",
@@ -105,6 +192,14 @@
         "destination": "Thailand",
         "excerpt": "Temples, street food, and bustling markets.",
         "description": "Bangkok is a lively city offering ornate temples, bustling street markets, and some of the best street food in the world. Explore the Grand Palace, take a boat ride along the Chao Phraya River, and immerse yourself in Thai culture and hospitality.",
-        "price": 700
+        "price": 700,
+        "imageUrl": "minimalist-destination-card-03.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "culture",
+            "asia",
+            "street-food"
+        ]
     }
 ]

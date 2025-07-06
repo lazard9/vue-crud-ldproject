@@ -9,6 +9,10 @@ const props = defineProps({
         type: Number,
         required: false,
         validator: val => val >= 0
+    },
+    tag: {
+        type: String,
+        required: false
     }
 });
 
@@ -35,9 +39,17 @@ onMounted(async () => {
 });
 
 const limitedDestinations = computed(() => {
+    let filtered = destinations.value;
+
+    if (props.tag) {
+        filtered = filtered.filter(dest =>
+            dest.tags?.includes(props.tag)
+        );
+    }
+
     return typeof props.limit === 'number'
-        ? destinations.value.slice(0, props.limit)
-        : destinations.value;
+        ? filtered.slice(0, props.limit)
+        : filtered;
 });
 </script>
 
@@ -47,7 +59,7 @@ const limitedDestinations = computed(() => {
             <Spinner size="10" />
         </div>
         <div v-else-if="error" class="text-red-600 text-center py-20">{{ error }}</div>
-        <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <DestinationCard v-for="destination in limitedDestinations" :key="destination.id"
                 :destination="destination" />
         </div>
