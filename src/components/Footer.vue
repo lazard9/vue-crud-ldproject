@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
-import logo from '@/assets/ldproject-logo-520-min.png';
+import logo from '@/assets/images/ldproject-logo-520-min.png';
 
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

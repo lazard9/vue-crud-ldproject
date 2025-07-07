@@ -108,8 +108,8 @@
         "excerpt": "Gaudí’s masterpieces and Mediterranean vibes.",
         "description": "Barcelona is known for its unique architecture by Antoni Gaudí, including Sagrada Familia and Park Güell. Enjoy sunny beaches, delicious tapas, and a lively nightlife. Wander through the Gothic Quarter and the famous La Rambla street.",
         "price": 950,
-        "imageUrl": "minimalist-destination-card-01.jpg",
-        "imageAlt": "Minimalist illustration card",
+        "imageUrl": "barcelona-sagrada-familia-cityscape.jpg",
+        "imageAlt": "Barcelona Sagrada Familia Cityscape",
         "tags": [
             "top",
             "architecture",
@@ -125,8 +125,8 @@
         "excerpt": "Where East meets West.",
         "description": "Istanbul is a city rich in history, culture, and stunning architecture. Explore the Hagia Sophia, Blue Mosque, and Grand Bazaar. Enjoy delicious Turkish cuisine and experience the unique blend of European and Asian influences.",
         "price": 850,
-        "imageUrl": "minimalist-destination-card-02.jpg",
-        "imageAlt": "Minimalist illustration card",
+        "imageUrl": "istanbul-skyline-at-sunset.jpg",
+        "imageAlt": "Istanbul Skyline at Sunset",
         "tags": [
             "grid",
             "culture",
@@ -193,7 +193,7 @@
         "excerpt": "Temples, street food, and bustling markets.",
         "description": "Bangkok is a lively city offering ornate temples, bustling street markets, and some of the best street food in the world. Explore the Grand Palace, take a boat ride along the Chao Phraya River, and immerse yourself in Thai culture and hospitality.",
         "price": 700,
-        "imageUrl": "minimalist-destination-card-03.jpg",
+        "imageUrl": "minimalist-destination-card-02.jpg",
         "imageAlt": "Minimalist illustration card",
         "tags": [
             "grid",

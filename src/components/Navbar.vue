@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import { useRoute, useRouter, RouterLink } from "vue-router";
 import { useAuthStore } from '@/stores/auth';
-import logo from "@/assets/ldproject-logo-520-min.png";
+import logo from "@/assets/images/ldproject-logo-520-min.png";
 
 const isOpen = ref(false);
 const route = useRoute();

@@ -1,6 +1,6 @@
 <script setup>
-import heroDarkTheme from '@/assets/hero-dark-theme.webp'
-import heroLightTheme from '@/assets/hero-light-theme.webp'
+import heroDarkTheme from '@/assets/images/hero-dark-theme.webp'
+import heroLightTheme from '@/assets/images/hero-light-theme.webp'
 
 defineProps({
     title: {
