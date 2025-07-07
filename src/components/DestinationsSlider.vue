@@ -1,0 +1,118 @@
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+const props = defineProps({
+    tag: {
+        type: String,
+        required: true
+    }
+});
+
+const destinations = ref([]);
+const loading = ref(true);
+const error = ref(null);
+
+onMounted(async () => {
+    try {
+        const response = await fetch('/api/destinations');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        destinations.value = data;
+    } catch (err) {
+        error.value = err.message;
+        console.error('Fetch error:', err);
+    } finally {
+        loading.value = false;
+    }
+});
+
+const filteredDestinations = computed(() =>
+    destinations.value.filter(dest =>
+        dest.tags.includes(props.tag)
+    )
+);
+
+const fallbackImage = "minimalist-destination-card-01.jpg";
+const fallbackAlt = "Minimalist illustration card";
+
+function getImageSrc(imageUrl) {
+    const finalImage = imageUrl || fallbackImage;
+    return new URL(`/src/assets/images/${finalImage}`, import.meta.url).href;
+}
+
+function handleImageError(event) {
+    event.target.src = new URL(`/src/assets/images/${fallbackImage}`, import.meta.url).href;
+    event.target.alt = fallbackAlt;
+}
+</script>
+
+<template>
+    <p v-if="loading">Loading...</p>
+    <p v-else-if="error" class="text-red-500">Error: {{ error }}</p>
+
+    <Swiper v-else :slides-per-view="1.2" :space-between="20" :loop="true"
+        :pagination="{ clickable: true, el: '.custom-swiper-pagination' }"
+        :autoplay="{ delay: 5000, disableOnInteraction: false }" :modules="[Pagination, Navigation, Autoplay]"
+        :breakpoints="{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2.5 },
+            1024: { slidesPerView: 3.5 }
+        }">
+        <SwiperSlide v-for="destination in filteredDestinations" :key="destination.id" class="pb-10">
+            <div class="flex flex-col rounded-2xl shadow-md bg-[var(--color-background-soft)] h-full overflow-hidden">
+                <img :src="getImageSrc(destination.imageUrl)" :alt="destination.imageAlt || fallbackAlt"
+                    @error="handleImageError" class="w-full h-52 sm:h-64 object-cover" loading="lazy" />
+
+                <div class="flex flex-col p-6 gap-4 flex-grow">
+                    <h3 class="text-2xl font-semibold text-neutral-800 dark:text-white">
+                        {{ destination.title }}
+                    </h3>
+
+                    <p class="text-neutral-600 dark:text-neutral-300">
+                        {{ destination.excerpt }}
+                    </p>
+
+                    <p class="text-lg font-semibold text-sky-700 dark:text-sky-300">
+                        ${{ destination.price }}
+                    </p>
+
+                    <RouterLink :to="`/destinations/${destination.slug}`" class="mt-auto">
+                        <button
+                            class="bg-teal-700 dark:bg-teal-600 hover:bg-teal-500 text-white px-5 py-2 rounded-lg transition-colors duration-200">
+                            Read More
+                        </button>
+                    </RouterLink>
+                </div>
+            </div>
+        </SwiperSlide>
+    </Swiper>
+    <div class="custom-swiper-pagination flex justify-center gap-2" />
+</template>
+
+<style scoped>
+.swiper-slide {
+    height: auto;
+}
+
+:deep(.swiper-pagination-bullet) {
+    width: 1rem;
+    height: 1rem;
+    background-color: #19b2e4;
+    opacity: 0.5;
+    transition: background-color 0.3s;
+}
+
+:deep(.swiper-pagination-bullet:hover),
+:deep(.swiper-pagination-bullet-active) {
+    background-color: #1cc6fd;
+    opacity: 1;
+}
+</style>
