@@ -13,6 +13,10 @@ const props = defineProps({
     tag: {
         type: String,
         required: false
+    },
+    showTags: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -60,8 +64,8 @@ const limitedDestinations = computed(() => {
         </div>
         <div v-else-if="error" class="text-red-600 text-center py-20">{{ error }}</div>
         <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <DestinationCard v-for="destination in limitedDestinations" :key="destination.id"
-                :destination="destination" />
+            <DestinationCard v-for="destination in limitedDestinations" :key="destination.id" :destination="destination"
+                :show-tags="showTags" />
         </div>
     </div>
 </template>

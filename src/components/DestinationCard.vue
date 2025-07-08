@@ -1,6 +1,10 @@
 <script setup>
-const { destination } = defineProps({
-    destination: Object
+const { destination, showTags = false } = defineProps({
+    destination: Object,
+    showTags: {
+        type: Boolean,
+        default: false
+    }
 });
 
 const fallbackImage = "minimalist-destination-card-01.jpg";
@@ -12,12 +16,25 @@ const imageSrc = new URL(
 ).href;
 
 const imageAlt = destination.imageAlt || fallbackAlt;
+
+const filteredTags = destination.tags.filter(
+    tag => tag !== 'top' && tag !== 'pinned'
+);
 </script>
 
 <template>
     <div class="flex flex-col rounded-2xl shadow-md bg-[var(--color-background-soft)] h-full overflow-hidden">
 
-        <img :src="imageSrc" :alt="imageAlt" class="w-full h-52 sm:h-64 object-cover" loading="lazy" />
+        <div class="relative">
+            <img :src="imageSrc" :alt="imageAlt" class="rounded-lg object-cover w-full h-48" />
+
+            <div class="absolute top-2 left-2 flex flex-wrap gap-1" v-if="showTags && filteredTags.length">
+                <span v-for="tag in filteredTags" :key="tag"
+                    class="bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded-full">
+                    {{ tag }}
+                </span>
+            </div>
+        </div>
 
         <div class="flex flex-col p-6 gap-4 flex-grow">
             <h3 class="text-2xl font-semibold text-neutral-800 dark:text-white">

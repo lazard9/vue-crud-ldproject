@@ -96,6 +96,12 @@ const imageAlt = computed(() => {
                     <img :src="imageSrc" :alt="imageAlt" class="w-full max-h-96 object-cover rounded-xl mb-6" />
                     <h1 class="text-3xl font-bold mb-4">{{ destination.title }}</h1>
                     <p class="text-gray-600 mb-2"><strong>Location:</strong> {{ destination.destination }}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span v-for="tag in destination.tags" :key="tag"
+                            class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-100">
+                            #{{ tag }}
+                        </span>
+                    </div>
                     <p class="text-lg font-light mb-4">{{ destination.description }}</p>
                     <p class="text-xl font-semibold text-sky-700 dark:text-sky-300">Price: ${{ destination.price }}</p>
                 </div>
