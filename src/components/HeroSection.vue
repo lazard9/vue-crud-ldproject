@@ -29,7 +29,7 @@ const themeClass = 'min-h-[450px]';
             <h1 class="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white">
                 {{ title }}
             </h1>
-            <p v-if="subtitle" class="mt-4 text-2xl md:text-3xl font-medium text-neutral-600 dark:text-neutral-300">
+            <p v-if="subtitle" class="mt-4 text-2xl md:text-3xl font-medium text-neutral-700 dark:text-neutral-300">
                 {{ subtitle }}
             </p>
         </div>

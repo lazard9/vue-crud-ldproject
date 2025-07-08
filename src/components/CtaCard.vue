@@ -1,5 +1,4 @@
 <script setup>
-import { inject } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const props = defineProps({
