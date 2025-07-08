@@ -4,7 +4,7 @@ import DestinationsSlider from '../components/DestinationsSlider.vue';
 import CtaCardsContainer from '../components/CtaCardsContainer.vue';
 import ParallaxSection from '@/components/ParallaxSection.vue';
 import DestinationsGrid from '../components/DestinationsGrid.vue';
-import ContactForm from '../components/ContactForm.vue';
+import SubscribeToForm from '../components/SubscribeToForm.vue';
 </script>
 
 <template>
@@ -33,7 +33,7 @@ import ContactForm from '../components/ContactForm.vue';
         </section>
 
         <section class="bg-[var(--color-background-mute)] py-16 px-4">
-            <ContactForm />
+            <SubscribeToForm />
         </section>
     </main>
 </template>

@@ -41,7 +41,7 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-    <form @submit.prevent="handleSubmit"
+    <form id="subscription" @submit.prevent="handleSubmit"
         class="space-y-4 max-w-md mx-auto p-6 bg-white dark:bg-zinc-900 rounded-xl shadow">
         <h2 class="text-xl font-semibold text-neutral-800 dark:text-white">Stay up to date</h2>
 

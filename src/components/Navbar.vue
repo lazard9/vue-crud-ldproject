@@ -18,6 +18,26 @@ function handleLogout() {
     auth.logout();
     router.push('/');
 }
+
+async function goToSubscription() {
+    if (route.path !== '/') {
+        await router.push('/');
+        setTimeout(() => {
+            const el = document.getElementById('subscription');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+    } else {
+        scrollToSubscription();
+    }
+}
+
+function scrollToSubscription() {
+    const el = document.getElementById('subscription');
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    isOpen.value = false; // zatvori hamburger meni ako je otvoren na mobilnom
+}
 </script>
 
 <template>
@@ -52,6 +72,11 @@ function handleLogout() {
                         'hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200',
                     ]">
                         Add Destination</RouterLink>
+
+                    <button @click.prevent="goToSubscription"
+                        class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200 cursor-pointer">
+                        Subscribe
+                    </button>
 
                     <button v-if="!loggedIn" @click="auth.openLoginModal"
                         class="block p-0 font-medium no-underline transition-colors duration-200  text-blue-600 hover:text-blue-500 dark:text-[#19b2e4] dark:hover:text-[#1cc6fd]">
@@ -89,6 +114,11 @@ function handleLogout() {
                     :class="[isActiveLink('/destinations/add') ? 'text-[var(--color-heading)]' : '', 'block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200']">
                     Add Destination
                 </RouterLink>
+
+                <button @click.prevent="goToSubscription"
+                    class="block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200 cursor-pointer">
+                    Subscribe
+                </button>
 
                 <button v-if="!loggedIn" @click="auth.openLoginModal"
                     class="block px-2 py-1 font-medium no-underline transition-colors duration-200  text-blue-600 hover:text-blue-500 dark:text-[#19b2e4] dark:hover:text-[#1cc6fd]">
