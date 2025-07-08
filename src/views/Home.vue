@@ -1,12 +1,14 @@
 <script setup>
 import HeroSection from '../components/HeroSection.vue';
-import CtaCardsContainer from '../components/CtaCardsContainer.vue';
-import DestinationsGrid from '../components/DestinationsGrid.vue';
 import DestinationsSlider from '../components/DestinationsSlider.vue';
+import CtaCardsContainer from '../components/CtaCardsContainer.vue';
+import ParallaxSection from '@/components/ParallaxSection.vue';
+import DestinationsGrid from '../components/DestinationsGrid.vue';
+import ContactForm from '../components/ContactForm.vue';
 </script>
 
 <template>
-    <main class="space-y-20 mb-20">
+    <main class="space-y-20">
         <section class="max-w-full mx-auto">
             <HeroSection title="Plan your trip" subtitle="Choose your perfect destination" />
         </section>
@@ -20,10 +22,18 @@ import DestinationsSlider from '../components/DestinationsSlider.vue';
             <CtaCardsContainer />
         </section>
 
+        <section class="max-w-full mx-auto">
+            <ParallaxSection />
+        </section>
+
         <section class="max-w-screen-xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-neutral-900 dark:text-white mb-8">Top Destinations</h2>
 
             <DestinationsGrid :limit="4" tag="top" />
+        </section>
+
+        <section class="bg-[var(--color-background-mute)] py-16 px-4">
+            <ContactForm />
         </section>
     </main>
 </template>
