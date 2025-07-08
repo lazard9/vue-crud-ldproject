@@ -10,6 +10,7 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 ## Features
 
 - ⚡ Vue 3 + Composition API with Vite
+- 📱 Fully responsive design optimized for desktop, tablet, and mobile devices
 - 🌐 Vue Router with dynamic routes and slug validation
 - 📝 Add/Edit destination form with client-side validation
 - 🔤 Unique slug generation logic
@@ -22,6 +23,10 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 🎯 Conditional UI rendering based on login status
 - 🔒 Route and UI protection based on login state
 - 🎨 Centered single CTA card for better layout when user is not logged in
+- 🎡 Dynamic, responsive, infinite swiper carousel with pagination and autoplay features
+- 💾 Local caching and fallback images for destinations with missing or broken images
+- 🔖 Tag filtering and dynamic tag display with exclusion of specific tags (e.g. top, pinned)
+- 🧹 Smooth scroll navigation to subscription form section
 
 ---
 
