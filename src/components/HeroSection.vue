@@ -26,10 +26,10 @@ const themeClass = 'min-h-[450px]';
             <div class="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
         <div class="relative z-10 px-4">
-            <h1 class="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white">
+            <h1 class="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white drop-shadow-lg">
                 {{ title }}
             </h1>
-            <p v-if="subtitle" class="mt-4 text-2xl md:text-3xl font-medium text-neutral-700 dark:text-neutral-300">
+            <p v-if="subtitle" class="mt-4 text-2xl md:text-3xl font-medium text-neutral-700 dark:text-neutral-300 drop-shadow">
                 {{ subtitle }}
             </p>
         </div>

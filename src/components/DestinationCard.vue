@@ -18,7 +18,7 @@ const imageSrc = new URL(
 const imageAlt = destination.imageAlt || fallbackAlt;
 
 const filteredTags = destination.tags.filter(
-    tag => tag !== 'top' && tag !== 'pinned'
+    tag => tag !== 'top' && tag !== 'pinned' && tag !== 'grid'
 );
 </script>
 
@@ -26,7 +26,7 @@ const filteredTags = destination.tags.filter(
     <div class="flex flex-col rounded-2xl shadow-md bg-[var(--color-background-soft)] h-full overflow-hidden">
 
         <div class="relative">
-            <img :src="imageSrc" :alt="imageAlt" class="rounded-lg object-cover w-full h-48" />
+            <img :src="imageSrc" :alt="imageAlt" class="rrounded-2xl object-cover w-full h-48" />
 
             <div class="absolute top-2 left-2 flex flex-wrap gap-1" v-if="showTags && filteredTags.length">
                 <span v-for="tag in filteredTags" :key="tag"
