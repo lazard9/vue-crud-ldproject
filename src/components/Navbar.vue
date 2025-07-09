@@ -2,7 +2,11 @@
 import { ref, computed } from 'vue';
 import { useRoute, useRouter, RouterLink } from "vue-router";
 import { useAuthStore } from '@/stores/auth';
+
 import logo from "@/assets/images/ldproject-logo-520-min.png";
+
+import { useShowSubscribe } from '@/composables/useShowSubscribe';
+const { showSubscribeForm } = useShowSubscribe();
 
 const isOpen = ref(false);
 const route = useRoute();
@@ -19,17 +23,17 @@ function handleLogout() {
     router.push('/');
 }
 
-async function goToSubscription() {
-    if (route.path !== '/') {
-        await router.push('/');
-        setTimeout(() => {
-            const el = document.getElementById('subscription');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300);
-    } else {
-        scrollToSubscription();
-    }
-}
+// async function goToSubscription() {
+//     if (route.path !== '/') {
+//         await router.push('/');
+//         setTimeout(() => {
+//             const el = document.getElementById('subscription');
+//             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//         }, 300);
+//     } else {
+//         scrollToSubscription();
+//     }
+// }
 
 function scrollToSubscription() {
     const el = document.getElementById('subscription');
@@ -73,7 +77,7 @@ function scrollToSubscription() {
                     ]">
                         Add Destination</RouterLink>
 
-                    <button @click.prevent="goToSubscription"
+                    <button v-if="showSubscribeForm" @click.prevent="scrollToSubscription"
                         class="hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200 cursor-pointer">
                         Subscribe
                     </button>
@@ -115,7 +119,7 @@ function scrollToSubscription() {
                     Add Destination
                 </RouterLink>
 
-                <button @click.prevent="goToSubscription"
+                <button v-if="showSubscribeForm" @click.prevent="scrollToSubscription"
                     class="block px-2 py-1 hover:text-[var(--color-heading)] font-medium no-underline transition-colors duration-200 cursor-pointer">
                     Subscribe
                 </button>
