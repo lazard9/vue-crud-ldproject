@@ -8,9 +8,10 @@
         "description": "Paris, the capital of France, is renowned for its art, gastronomy, and culture. Visit iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Wander along the Seine River and enjoy charming cafes on every corner.",
         "price": 999,
         "imageUrl": "paris-eiffel-tower.jpg",
-        "imageAlt": "Eiffel Tower at sunset in Paris",
+        "imageAlt": "Paris Eiffel tower",
         "tags": [
             "pinned",
+            "grid",
             "romantic",
             "europe"
         ]
@@ -27,6 +28,7 @@
         "imageAlt": "Cherry blossoms with Tokyo city skyline",
         "tags": [
             "pinned",
+            "grid",
             "modern",
             "asia",
             "technology"
@@ -43,7 +45,8 @@
         "imageUrl": "new-york-central-park.jpg",
         "imageAlt": "Aerial view of Central Park in New York City",
         "tags": [
-            "pinned",
+            "top",
+            "grid",
             "urban",
             "nightlife",
             "america"
@@ -60,7 +63,8 @@
         "imageUrl": "sydney-opera-house.jpg",
         "imageAlt": "Sydney Opera House and Harbour Bridge on a sunny day",
         "tags": [
-            "top",
+            "pinned",
+            "grid",
             "beach",
             "adventure",
             "australia"
@@ -77,7 +81,8 @@
         "imageUrl": "rome-colosseum-sunset.jpg",
         "imageAlt": "Colosseum lit by sunset in Rome",
         "tags": [
-            "top",
+            "pinned",
+            "grid",
             "historic",
             "art",
             "europe"
@@ -95,6 +100,7 @@
         "imageAlt": "Table Mountain rising above Cape Town city",
         "tags": [
             "top",
+            "grid",
             "nature",
             "adventure",
             "africa"
@@ -112,6 +118,7 @@
         "imageAlt": "Barcelona Sagrada Familia Cityscape",
         "tags": [
             "top",
+            "grid",
             "architecture",
             "beach",
             "europe"
@@ -128,6 +135,7 @@
         "imageUrl": "istanbul-skyline-at-sunset.jpg",
         "imageAlt": "Istanbul Skyline at Sunset",
         "tags": [
+            "top",
             "grid",
             "culture",
             "historic",
@@ -142,8 +150,8 @@
         "excerpt": "Gateway to the land of fire and ice.",
         "description": "Reykjavik is a charming capital city surrounded by Iceland’s dramatic landscapes. Witness the Northern Lights, geothermal spas, and volcanic terrain. It’s perfect for nature lovers and those seeking unique outdoor experiences.",
         "price": 1400,
-        "imageUrl": "minimalist-destination-card-03.jpg",
-        "imageAlt": "Minimalist illustration card",
+        "imageUrl": "reykjavik-winter-wonderland.jpg",
+        "imageAlt": "Reykjavik Winter Wonderland",
         "tags": [
             "grid",
             "nature",
@@ -159,9 +167,10 @@
         "excerpt": "Exotic markets and desert adventures.",
         "description": "Marrakech captivates visitors with its colorful souks, beautiful palaces, and lively medinas. Explore the Jardin Majorelle, enjoy traditional Moroccan cuisine, and take trips into the Sahara Desert for unforgettable adventures.",
         "price": 799,
-        "imageUrl": "minimalist-destination-card-04.jpg",
-        "imageAlt": "Minimalist illustration card",
+        "imageUrl": "marrakech-market-vibrance.jpg",
+        "imageAlt": "Marrakech Market Vibrance",
         "tags": [
+            "pinned",
             "grid",
             "culture",
             "desert",
@@ -176,9 +185,10 @@
         "excerpt": "Carnival city with stunning landscapes.",
         "description": "Rio is famous for its Carnival festival, beautiful beaches like Copacabana, and the iconic Christ the Redeemer statue. Enjoy samba music, vibrant nightlife, and scenic views from Sugarloaf Mountain.",
         "price": 1150,
-        "imageUrl": "minimalist-destination-card-01.jpg",
-        "imageAlt": "Minimalist illustration card",
+        "imageUrl": "rios-iconic-summer.jpg",
+        "imageAlt": "Rio's Iconic Summer",
         "tags": [
+            "top",
             "grid",
             "beach",
             "festival",
@@ -193,13 +203,150 @@
         "excerpt": "Temples, street food, and bustling markets.",
         "description": "Bangkok is a lively city offering ornate temples, bustling street markets, and some of the best street food in the world. Explore the Grand Palace, take a boat ride along the Chao Phraya River, and immerse yourself in Thai culture and hospitality.",
         "price": 700,
-        "imageUrl": "minimalist-destination-card-02.jpg",
-        "imageAlt": "Minimalist illustration card",
+        "imageUrl": "bangkok-street-vibes.jpg",
+        "imageAlt": "Bangkok Street Vibes",
         "tags": [
+            "pinned",
             "grid",
             "culture",
             "asia",
             "street-food"
+        ]
+    },
+    {
+        "id": "edc92eaa-5314-4f1f-8999-321e5fd124e1",
+        "title": "Lisbon",
+        "slug": "lisbon",
+        "destination": "Portugal",
+        "excerpt": "Coastal charm and historic streets.",
+        "description": "Lisbon blends traditional charm with modern energy. Ride the famous yellow trams, enjoy views from São Jorge Castle, and explore colorful neighborhoods like Alfama. The food, music, and sea breeze make it unforgettable.",
+        "price": 880,
+        "imageUrl": "minimalist-destination-card-01.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "historic",
+            "coastal",
+            "europe"
+        ]
+    },
+    {
+        "id": "a61ef9c6-5f4d-4826-963e-2d22bda4458f",
+        "title": "Prague",
+        "slug": "prague",
+        "destination": "Czech Republic",
+        "excerpt": "Medieval charm in the heart of Europe.",
+        "description": "Prague is known for its fairytale architecture, the Astronomical Clock, and Charles Bridge. Wander through cobbled streets and enjoy Czech beer in one of the many historic pubs.",
+        "price": 820,
+        "imageUrl": "minimalist-destination-card-02.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "romantic",
+            "historic",
+            "europe"
+        ]
+    },
+    {
+        "id": "ae203147-bd01-4eeb-8757-4db0f36b3c62",
+        "title": "Vancouver",
+        "slug": "vancouver",
+        "destination": "Canada",
+        "excerpt": "Where mountains meet the sea.",
+        "description": "Vancouver offers stunning natural scenery and a high quality of life. Go skiing in Whistler, stroll through Stanley Park, or enjoy multicultural cuisine in the downtown core.",
+        "price": 1250,
+        "imageUrl": "minimalist-destination-card-03.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "nature",
+            "urban",
+            "north-america"
+        ]
+    },
+    {
+        "id": "ba9a5a11-9ebf-4087-a30b-62249c3666f6",
+        "title": "Vienna",
+        "slug": "vienna",
+        "destination": "Austria",
+        "excerpt": "Elegant palaces and classical music.",
+        "description": "Vienna is the cultural heart of Europe, home to classical composers, grand palaces, and rich history. Visit Schönbrunn Palace, enjoy a concert, and sip coffee in a historic café.",
+        "price": 890,
+        "imageUrl": "minimalist-destination-card-04.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "music",
+            "architecture",
+            "europe"
+        ]
+    },
+    {
+        "id": "d36f2c69-d564-49ec-b43a-b26b56c447a1",
+        "title": "Seoul",
+        "slug": "seoul",
+        "destination": "South Korea",
+        "excerpt": "Tradition and tech in harmony.",
+        "description": "Seoul is a city of contrasts—ancient palaces meet modern skyscrapers. Shop in Myeongdong, eat Korean BBQ, and explore vibrant districts like Hongdae and Gangnam.",
+        "price": 1050,
+        "imageUrl": "minimalist-destination-card-01.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "asia",
+            "technology",
+            "culture"
+        ]
+    },
+    {
+        "id": "f7d6fa8c-c73c-4707-997c-1c6bc1e48de2",
+        "title": "Dubrovnik",
+        "slug": "dubrovnik",
+        "destination": "Croatia",
+        "excerpt": "Walled city by the sea.",
+        "description": "Dubrovnik offers a unique blend of medieval architecture and coastal views. Walk the ancient city walls, swim in the Adriatic, and enjoy Mediterranean food under stone arches.",
+        "price": 970,
+        "imageUrl": "minimalist-destination-card-02.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "historic",
+            "coastal",
+            "europe"
+        ]
+    },
+    {
+        "id": "4c0eb0c7-c7f1-4fd8-8b2e-29a21bcf1573",
+        "title": "Buenos Aires",
+        "slug": "buenos-aires",
+        "destination": "Argentina",
+        "excerpt": "Tango, steak, and colonial charm.",
+        "description": "Buenos Aires is the cultural capital of South America. Experience tango shows, steakhouse dinners, and neoclassical architecture. Walk through colorful La Boca and elegant Recoleta.",
+        "price": 990,
+        "imageUrl": "minimalist-destination-card-03.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "culture",
+            "south-america",
+            "nightlife"
+        ]
+    },
+    {
+        "id": "cf19d009-0d29-48ec-91a7-5b38296d5d6a",
+        "title": "Athens",
+        "slug": "athens",
+        "destination": "Greece",
+        "excerpt": "Cradle of Western civilization.",
+        "description": "Athens is a vibrant capital full of history. Visit the Acropolis, explore ancient ruins, and enjoy delicious Greek cuisine. Perfect for history buffs and sunny city lovers.",
+        "price": 870,
+        "imageUrl": "minimalist-destination-card-04.jpg",
+        "imageAlt": "Minimalist illustration card",
+        "tags": [
+            "grid",
+            "historic",
+            "europe",
+            "sunny"
         ]
     }
 ]
