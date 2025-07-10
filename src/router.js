@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { isLoggedIn } from '@/utils/auth'
+import { createRouter, createWebHistory } from 'vue-router';
+import { isLoggedIn } from '@/utils/auth';
 
 const routes = [
     { path: '/', component: () => import('./views/Home.vue') },
@@ -21,7 +21,14 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes,
-})
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else {
+            return { top: 0 };
+        }
+    }
+});
 
 // global guard
 router.beforeEach((to, from, next) => {
@@ -32,5 +39,9 @@ router.beforeEach((to, from, next) => {
         next()
     }
 })
+
+router.afterEach(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+});
 
 export default router
