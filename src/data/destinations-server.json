@@ -1,207 +1,372 @@
 {
-    "destinations": [
-        {
-            "id": "d4f8c18b-5c59-4f5b-a9e1-93cc34df9b83",
-            "title": "Paris",
-            "slug": "paris",
-            "destination": "France",
-            "excerpt": "The city of lights and romance.",
-            "description": "Paris, the capital of France, is renowned for its art, gastronomy, and culture. Visit iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Wander along the Seine River and enjoy charming cafes on every corner.",
-            "price": 999,
-            "imageUrl": "paris-eiffel-tower.jpg",
-            "imageAlt": "Eiffel Tower at sunset in Paris",
-            "tags": [
-                "pinned",
-                "romantic",
-                "europe"
-            ]
-        },
-        {
-            "id": "a3152ed3-51ce-4890-91c2-63a42cf0c3c3",
-            "title": "Tokyo",
-            "slug": "tokyo",
-            "destination": "Japan",
-            "excerpt": "Modern tech meets traditional temples.",
-            "description": "Tokyo is a bustling metropolis blending ultramodern and traditional styles. Explore ancient temples, indulge in sushi and ramen, and experience cutting-edge technology in districts like Akihabara and Shibuya. Don't miss the beautiful cherry blossom season in spring.",
-            "price": 1299,
-            "imageUrl": "tokyo-cherry-blossoms.jpg",
-            "imageAlt": "Cherry blossoms with Tokyo city skyline",
-            "tags": [
-                "pinned",
-                "modern",
-                "asia",
-                "technology"
-            ]
-        },
-        {
-            "id": "6f2cb9f4-e3f8-4a5e-9f80-8c91d9d3e71d",
-            "title": "New York City",
-            "slug": "new-york-city",
-            "destination": "USA",
-            "excerpt": "The city that never sleeps.",
-            "description": "New York City is famous for its towering skyscrapers, diverse culture, and vibrant nightlife. Visit the Statue of Liberty, Central Park, Broadway theaters, and explore world-class museums like the MET. Enjoy a slice of authentic New York pizza while walking down Times Square.",
-            "price": 1099,
-            "imageUrl": "new-york-central-park.jpg",
-            "imageAlt": "Aerial view of Central Park in New York City",
-            "tags": [
-                "top",
-                "urban",
-                "nightlife",
-                "america"
-            ]
-        },
-        {
-            "id": "3dbf7e6f-0be4-4d71-b07b-73be4c1df7cd",
-            "title": "Sydney",
-            "slug": "sydney",
-            "destination": "Australia",
-            "excerpt": "Iconic opera house and sunny beaches.",
-            "description": "Sydney offers stunning beaches like Bondi and Manly, the iconic Sydney Opera House, and the Sydney Harbour Bridge. Enjoy outdoor adventures, vibrant markets, and multicultural cuisine in this sunny city on the Australian coast.",
-            "price": 1199,
-            "imageUrl": "sydney-opera-house.jpg",
-            "imageAlt": "Sydney Opera House and Harbour Bridge on a sunny day",
-            "tags": [
-                "pinned",
-                "beach",
-                "adventure",
-                "australia"
-            ]
-        },
-        {
-            "id": "853579f6-cc17-4d90-850f-5ea290d3f3ef",
-            "title": "Rome",
-            "slug": "rome",
-            "destination": "Italy",
-            "excerpt": "History and art at every corner.",
-            "description": "Rome is a treasure trove of ancient history and architecture. Explore the Colosseum, Roman Forum, Vatican Museums, and Sistine Chapel. Savor authentic Italian pasta and gelato while strolling through charming piazzas and fountains.",
-            "price": 899,
-            "imageUrl": "rome-colosseum-sunset.jpg",
-            "imageAlt": "Colosseum lit by sunset in Rome",
-            "tags": [
-                "pinned",
-                "historic",
-                "art",
-                "europe"
-            ]
-        },
-        {
-            "id": "1c918a96-2e40-4f5b-bf62-6a6a2438a91d",
-            "title": "Cape Town",
-            "slug": "cape-town",
-            "destination": "South Africa",
-            "excerpt": "Natural beauty and rich culture.",
-            "description": "Cape Town is famed for its breathtaking landscapes, including Table Mountain and Cape Point. Discover vibrant cultural neighborhoods, beautiful beaches, and world-class vineyards nearby. Adventure seekers can enjoy hiking, surfing, and safaris.",
-            "price": 1099,
-            "imageUrl": "cape-town-table-mountain.jpg",
-            "imageAlt": "Table Mountain rising above Cape Town city",
-            "tags": [
-                "top",
-                "nature",
-                "adventure",
-                "africa"
-            ]
-        },
-        {
-            "id": "a470cb61-0483-4f1e-96ee-c84d5481ad12",
-            "title": "Barcelona",
-            "slug": "barcelona",
-            "destination": "Spain",
-            "excerpt": "Gaudí’s masterpieces and Mediterranean vibes.",
-            "description": "Barcelona is known for its unique architecture by Antoni Gaudí, including Sagrada Familia and Park Güell. Enjoy sunny beaches, delicious tapas, and a lively nightlife. Wander through the Gothic Quarter and the famous La Rambla street.",
-            "price": 950,
-            "imageUrl": "barcelona-sagrada-familia-cityscape.jpg",
-            "imageAlt": "Barcelona Sagrada Familia Cityscape",
-            "tags": [
-                "top",
-                "architecture",
-                "beach",
-                "europe"
-            ]
-        },
-        {
-            "id": "b0f505e1-69f9-43e8-aed6-0163a937ea7a",
-            "title": "Istanbul",
-            "slug": "istanbul",
-            "destination": "Turkey",
-            "excerpt": "Where East meets West.",
-            "description": "Istanbul is a city rich in history, culture, and stunning architecture. Explore the Hagia Sophia, Blue Mosque, and Grand Bazaar. Enjoy delicious Turkish cuisine and experience the unique blend of European and Asian influences.",
-            "price": 850,
-            "imageUrl": "istanbul-skyline-at-sunset.jpg",
-            "imageAlt": "Istanbul Skyline at Sunset",
-            "tags": [
-                "top",
-                "culture",
-                "historic",
-                "asia-europe"
-            ]
-        },
-        {
-            "id": "e09cd1cc-2821-4e0c-8105-98780ab05bc5",
-            "title": "Reykjavik",
-            "slug": "reykjavik",
-            "destination": "Iceland",
-            "excerpt": "Gateway to the land of fire and ice.",
-            "description": "Reykjavik is a charming capital city surrounded by Iceland’s dramatic landscapes. Witness the Northern Lights, geothermal spas, and volcanic terrain. It’s perfect for nature lovers and those seeking unique outdoor experiences.",
-            "price": 1400,
-            "imageUrl": "minimalist-destination-card-03.jpg",
-            "imageAlt": "Minimalist illustration card",
-            "tags": [
-                "grid",
-                "nature",
-                "adventure",
-                "cold"
-            ]
-        },
-        {
-            "id": "0f083fc4-3f1e-41b6-97cf-8f0a13a434f9",
-            "title": "Marrakech",
-            "slug": "marrakech",
-            "destination": "Morocco",
-            "excerpt": "Exotic markets and desert adventures.",
-            "description": "Marrakech captivates visitors with its colorful souks, beautiful palaces, and lively medinas. Explore the Jardin Majorelle, enjoy traditional Moroccan cuisine, and take trips into the Sahara Desert for unforgettable adventures.",
-            "price": 799,
-            "imageUrl": "minimalist-destination-card-04.jpg",
-            "imageAlt": "Minimalist illustration card",
-            "tags": [
-                "grid",
-                "culture",
-                "desert",
-                "africa"
-            ]
-        },
-        {
-            "id": "8c85a431-8f8c-4a2b-b610-2ff2b594017f",
-            "title": "Rio de Janeiro",
-            "slug": "rio-de-janeiro",
-            "destination": "Brazil",
-            "excerpt": "Carnival city with stunning landscapes.",
-            "description": "Rio is famous for its Carnival festival, beautiful beaches like Copacabana, and the iconic Christ the Redeemer statue. Enjoy samba music, vibrant nightlife, and scenic views from Sugarloaf Mountain.",
-            "price": 1150,
-            "imageUrl": "minimalist-destination-card-01.jpg",
-            "imageAlt": "Minimalist illustration card",
-            "tags": [
-                "grid",
-                "beach",
-                "festival",
-                "south-america"
-            ]
-        },
-        {
-            "id": "59d11b36-e27a-47f7-9a30-f084816947cc",
-            "title": "Bangkok",
-            "slug": "bangkok",
-            "destination": "Thailand",
-            "excerpt": "Temples, street food, and bustling markets.",
-            "description": "Bangkok is a lively city offering ornate temples, bustling street markets, and some of the best street food in the world. Explore the Grand Palace, take a boat ride along the Chao Phraya River, and immerse yourself in Thai culture and hospitality.",
-            "price": 700,
-            "imageUrl": "minimalist-destination-card-02.jpg",
-            "imageAlt": "Minimalist illustration card",
-            "tags": [
-                "grid",
-                "culture",
-                "asia",
-                "street-food"
-            ]
-        }
-    ]
+  "destinations": [
+    {
+      "id": "d4f8c18b-5c59-4f5b-a9e1-93cc34df9b83",
+      "title": "Paris",
+      "slug": "paris",
+      "destination": "France",
+      "excerpt": "The city of lights and romance.",
+      "description": "Paris, the capital of France, is renowned for its art, gastronomy, and culture. Visit iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Wander along the Seine River and enjoy charming cafes on every corner.",
+      "price": 999,
+      "imageUrl": "istockphoto-629800534-612x612.jpg",
+      "imageAlt": "Istockphoto 629800534 612x612",
+      "tags": [
+        "pinned",
+        "grid",
+        "romantic",
+        "europe"
+      ]
+    },
+    {
+      "id": "a3152ed3-51ce-4890-91c2-63a42cf0c3c3",
+      "title": "Tokyo",
+      "slug": "tokyo",
+      "destination": "Japan",
+      "excerpt": "Modern tech meets traditional temples.",
+      "description": "Tokyo is a bustling metropolis blending ultramodern and traditional styles. Explore ancient temples, indulge in sushi and ramen, and experience cutting-edge technology in districts like Akihabara and Shibuya. Don't miss the beautiful cherry blossom season in spring.",
+      "price": 1299,
+      "imageUrl": "tokyo-cherry-blossoms.jpg",
+      "imageAlt": "Cherry blossoms with Tokyo city skyline",
+      "tags": [
+        "pinned",
+        "grid",
+        "modern",
+        "asia",
+        "technology"
+      ]
+    },
+    {
+      "id": "6f2cb9f4-e3f8-4a5e-9f80-8c91d9d3e71d",
+      "title": "New York City",
+      "slug": "new-york-city",
+      "destination": "USA",
+      "excerpt": "The city that never sleeps.",
+      "description": "New York City is famous for its towering skyscrapers, diverse culture, and vibrant nightlife. Visit the Statue of Liberty, Central Park, Broadway theaters, and explore world-class museums like the MET. Enjoy a slice of authentic New York pizza while walking down Times Square.",
+      "price": 1099,
+      "imageUrl": "new-york-central-park.jpg",
+      "imageAlt": "Aerial view of Central Park in New York City",
+      "tags": [
+        "top",
+        "grid",
+        "urban",
+        "nightlife",
+        "america"
+      ]
+    },
+    {
+      "id": "3dbf7e6f-0be4-4d71-b07b-73be4c1df7cd",
+      "title": "Sydney",
+      "slug": "sydney",
+      "destination": "Australia",
+      "excerpt": "Iconic opera house and sunny beaches.",
+      "description": "Sydney offers stunning beaches like Bondi and Manly, the iconic Sydney Opera House, and the Sydney Harbour Bridge. Enjoy outdoor adventures, vibrant markets, and multicultural cuisine in this sunny city on the Australian coast.",
+      "price": 1199,
+      "imageUrl": "sydney-opera-house.jpg",
+      "imageAlt": "Sydney Opera House and Harbour Bridge on a sunny day",
+      "tags": [
+        "pinned",
+        "grid",
+        "beach",
+        "adventure",
+        "australia"
+      ]
+    },
+    {
+      "id": "853579f6-cc17-4d90-850f-5ea290d3f3ef",
+      "title": "Rome",
+      "slug": "rome",
+      "destination": "Italy",
+      "excerpt": "History and art at every corner.",
+      "description": "Rome is a treasure trove of ancient history and architecture. Explore the Colosseum, Roman Forum, Vatican Museums, and Sistine Chapel. Savor authentic Italian pasta and gelato while strolling through charming piazzas and fountains.",
+      "price": 899,
+      "imageUrl": "rome-colosseum-sunset.jpg",
+      "imageAlt": "Colosseum lit by sunset in Rome",
+      "tags": [
+        "pinned",
+        "grid",
+        "historic",
+        "art",
+        "europe"
+      ]
+    },
+    {
+      "id": "1c918a96-2e40-4f5b-bf62-6a6a2438a91d",
+      "title": "Cape Town",
+      "slug": "cape-town",
+      "destination": "South Africa",
+      "excerpt": "Natural beauty and rich culture.",
+      "description": "Cape Town is famed for its breathtaking landscapes, including Table Mountain and Cape Point. Discover vibrant cultural neighborhoods, beautiful beaches, and world-class vineyards nearby. Adventure seekers can enjoy hiking, surfing, and safaris.",
+      "price": 1099,
+      "imageUrl": "cape-town-table-mountain.jpg",
+      "imageAlt": "Table Mountain rising above Cape Town city",
+      "tags": [
+        "top",
+        "grid",
+        "nature",
+        "adventure",
+        "africa"
+      ]
+    },
+    {
+      "id": "a470cb61-0483-4f1e-96ee-c84d5481ad12",
+      "title": "Barcelona",
+      "slug": "barcelona",
+      "destination": "Spain",
+      "excerpt": "Gaudí’s masterpieces and Mediterranean vibes.",
+      "description": "Barcelona is known for its unique architecture by Antoni Gaudí, including Sagrada Familia and Park Güell. Enjoy sunny beaches, delicious tapas, and a lively nightlife. Wander through the Gothic Quarter and the famous La Rambla street.",
+      "price": 950,
+      "imageUrl": "barcelona-sagrada-familia-cityscape.jpg",
+      "imageAlt": "Barcelona Sagrada Familia Cityscape",
+      "tags": [
+        "top",
+        "grid",
+        "architecture",
+        "beach",
+        "europe"
+      ]
+    },
+    {
+      "id": "b0f505e1-69f9-43e8-aed6-0163a937ea7a",
+      "title": "Istanbul",
+      "slug": "istanbul",
+      "destination": "Turkey",
+      "excerpt": "Where East meets West.",
+      "description": "Istanbul is a city rich in history, culture, and stunning architecture. Explore the Hagia Sophia, Blue Mosque, and Grand Bazaar. Enjoy delicious Turkish cuisine and experience the unique blend of European and Asian influences.",
+      "price": 850,
+      "imageUrl": "istanbul-skyline-at-sunset.jpg",
+      "imageAlt": "Istanbul Skyline at Sunset",
+      "tags": [
+        "top",
+        "grid",
+        "culture",
+        "historic",
+        "asia-europe"
+      ]
+    },
+    {
+      "id": "e09cd1cc-2821-4e0c-8105-98780ab05bc5",
+      "title": "Reykjavik",
+      "slug": "reykjavik",
+      "destination": "Iceland",
+      "excerpt": "Gateway to the land of fire and ice.",
+      "description": "Reykjavik is a charming capital city surrounded by Iceland’s dramatic landscapes. Witness the Northern Lights, geothermal spas, and volcanic terrain. It’s perfect for nature lovers and those seeking unique outdoor experiences.",
+      "price": 1400,
+      "imageUrl": "reykjavik-winter-wonderland.jpg",
+      "imageAlt": "Reykjavik Winter Wonderland",
+      "tags": [
+        "grid",
+        "nature",
+        "adventure",
+        "cold"
+      ]
+    },
+    {
+      "id": "0f083fc4-3f1e-41b6-97cf-8f0a13a434f9",
+      "title": "Marrakech",
+      "slug": "marrakech",
+      "destination": "Morocco",
+      "excerpt": "Exotic markets and desert adventures.",
+      "description": "Marrakech captivates visitors with its colorful souks, beautiful palaces, and lively medinas. Explore the Jardin Majorelle, enjoy traditional Moroccan cuisine, and take trips into the Sahara Desert for unforgettable adventures.",
+      "price": 799,
+      "imageUrl": "marrakech-market-vibrance.jpg",
+      "imageAlt": "Marrakech Market Vibrance",
+      "tags": [
+        "pinned",
+        "grid",
+        "culture",
+        "desert",
+        "africa"
+      ]
+    },
+    {
+      "id": "8c85a431-8f8c-4a2b-b610-2ff2b594017f",
+      "title": "Rio de Janeiro",
+      "slug": "rio-de-janeiro",
+      "destination": "Brazil",
+      "excerpt": "Carnival city with stunning landscapes.",
+      "description": "Rio is famous for its Carnival festival, beautiful beaches like Copacabana, and the iconic Christ the Redeemer statue. Enjoy samba music, vibrant nightlife, and scenic views from Sugarloaf Mountain.",
+      "price": 1150,
+      "imageUrl": "rios-iconic-summer.jpg",
+      "imageAlt": "Rio's Iconic Summer",
+      "tags": [
+        "top",
+        "grid",
+        "beach",
+        "festival",
+        "south-america"
+      ]
+    },
+    {
+      "id": "59d11b36-e27a-47f7-9a30-f084816947cc",
+      "title": "Bangkok",
+      "slug": "bangkok",
+      "destination": "Thailand",
+      "excerpt": "Temples, street food, and bustling markets.",
+      "description": "Bangkok is a lively city offering ornate temples, bustling street markets, and some of the best street food in the world. Explore the Grand Palace, take a boat ride along the Chao Phraya River, and immerse yourself in Thai culture and hospitality.",
+      "price": 700,
+      "imageUrl": "bangkok-street-vibes.jpg",
+      "imageAlt": "Bangkok Street Vibes",
+      "tags": [
+        "pinned",
+        "grid",
+        "culture",
+        "asia",
+        "street-food"
+      ]
+    },
+    {
+      "id": "edc92eaa-5314-4f1f-8999-321e5fd124e1",
+      "title": "Lisbon",
+      "slug": "lisbon",
+      "destination": "Portugal",
+      "excerpt": "Coastal charm and historic streets.",
+      "description": "Lisbon blends traditional charm with modern energy. Ride the famous yellow trams, enjoy views from São Jorge Castle, and explore colorful neighborhoods like Alfama. The food, music, and sea breeze make it unforgettable.",
+      "price": 880,
+      "imageUrl": "minimalist-destination-card-01.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "historic",
+        "coastal",
+        "europe"
+      ]
+    },
+    {
+      "id": "a61ef9c6-5f4d-4826-963e-2d22bda4458f",
+      "title": "Prague",
+      "slug": "prague",
+      "destination": "Czech Republic",
+      "excerpt": "Medieval charm in the heart of Europe.",
+      "description": "Prague is known for its fairytale architecture, the Astronomical Clock, and Charles Bridge. Wander through cobbled streets and enjoy Czech beer in one of the many historic pubs.",
+      "price": 820,
+      "imageUrl": "minimalist-destination-card-02.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "romantic",
+        "historic",
+        "europe"
+      ]
+    },
+    {
+      "id": "ae203147-bd01-4eeb-8757-4db0f36b3c62",
+      "title": "Vancouver",
+      "slug": "vancouver",
+      "destination": "Canada",
+      "excerpt": "Where mountains meet the sea.",
+      "description": "Vancouver offers stunning natural scenery and a high quality of life. Go skiing in Whistler, stroll through Stanley Park, or enjoy multicultural cuisine in the downtown core.",
+      "price": 1250,
+      "imageUrl": "minimalist-destination-card-03.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "nature",
+        "urban",
+        "north-america"
+      ]
+    },
+    {
+      "id": "ba9a5a11-9ebf-4087-a30b-62249c3666f6",
+      "title": "Vienna",
+      "slug": "vienna",
+      "destination": "Austria",
+      "excerpt": "Elegant palaces and classical music.",
+      "description": "Vienna is the cultural heart of Europe, home to classical composers, grand palaces, and rich history. Visit Schönbrunn Palace, enjoy a concert, and sip coffee in a historic café.",
+      "price": 890,
+      "imageUrl": "minimalist-destination-card-04.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "music",
+        "architecture",
+        "europe"
+      ]
+    },
+    {
+      "id": "d36f2c69-d564-49ec-b43a-b26b56c447a1",
+      "title": "Seoul",
+      "slug": "seoul",
+      "destination": "South Korea",
+      "excerpt": "Tradition and tech in harmony.",
+      "description": "Seoul is a city of contrasts—ancient palaces meet modern skyscrapers. Shop in Myeongdong, eat Korean BBQ, and explore vibrant districts like Hongdae and Gangnam.",
+      "price": 1050,
+      "imageUrl": "minimalist-destination-card-01.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "asia",
+        "technology",
+        "culture"
+      ]
+    },
+    {
+      "id": "f7d6fa8c-c73c-4707-997c-1c6bc1e48de2",
+      "title": "Dubrovnik",
+      "slug": "dubrovnik",
+      "destination": "Croatia",
+      "excerpt": "Walled city by the sea.",
+      "description": "Dubrovnik offers a unique blend of medieval architecture and coastal views. Walk the ancient city walls, swim in the Adriatic, and enjoy Mediterranean food under stone arches.",
+      "price": 970,
+      "imageUrl": "minimalist-destination-card-02.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "historic",
+        "coastal",
+        "europe"
+      ]
+    },
+    {
+      "id": "4c0eb0c7-c7f1-4fd8-8b2e-29a21bcf1573",
+      "title": "Buenos Aires",
+      "slug": "buenos-aires",
+      "destination": "Argentina",
+      "excerpt": "Tango, steak, and colonial charm.",
+      "description": "Buenos Aires is the cultural capital of South America. Experience tango shows, steakhouse dinners, and neoclassical architecture. Walk through colorful La Boca and elegant Recoleta.",
+      "price": 990,
+      "imageUrl": "minimalist-destination-card-03.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "culture",
+        "south-america",
+        "nightlife"
+      ]
+    },
+    {
+      "id": "cf19d009-0d29-48ec-91a7-5b38296d5d6a",
+      "title": "Athens",
+      "slug": "athens",
+      "destination": "Greece",
+      "excerpt": "Cradle of Western civilization.",
+      "description": "Athens is a vibrant capital full of history. Visit the Acropolis, explore ancient ruins, and enjoy delicious Greek cuisine. Perfect for history buffs and sunny city lovers.",
+      "price": 870,
+      "imageUrl": "minimalist-destination-card-04.jpg",
+      "imageAlt": "Minimalist illustration card",
+      "tags": [
+        "grid",
+        "historic",
+        "europe",
+        "sunny"
+      ]
+    },
+    {
+      "id": "dab26c1c-8db3-4bb3-960b-44ea1e359c3f",
+      "title": "ffdfs",
+      "slug": "ffdfs-1",
+      "destination": "fsfdsfd",
+      "excerpt": "fdsfsd",
+      "description": "<p>fsdfdsf</p><h2>fsdfdsf</h2><h3>fsdffds</h3><p>fdsfsdfds</p>",
+      "price": 2222,
+      "imageUrl": "istockphoto-629800534-612x612.jpg",
+      "imageAlt": "Istockphoto 629800534 612x612",
+      "tags": [
+        "grid",
+        "historic",
+        "europe",
+        "sunny",
+        "bunny"
+      ]
+    }
+  ]
 }

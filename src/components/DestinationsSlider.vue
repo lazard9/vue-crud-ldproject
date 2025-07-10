@@ -40,14 +40,21 @@ const fallbackImage = "minimalist-destination-card-01.jpg";
 const fallbackAlt = "Minimalist illustration card";
 
 function getImageSrc(imageUrl) {
-    const finalImage = imageUrl || fallbackImage;
-    return new URL(`/src/assets/images/${finalImage}`, import.meta.url).href;
+    return `/media/${imageUrl || fallbackImage}`;
 }
+// function getImageSrc(imageUrl) {
+//     const finalImage = imageUrl || fallbackImage;
+//     return new URL(`/src/assets/images/${finalImage}`, import.meta.url).href;
+// }
 
 function handleImageError(event) {
-    event.target.src = new URL(`/src/assets/images/${fallbackImage}`, import.meta.url).href;
+    event.target.src = `/media/${fallbackImage}`;
     event.target.alt = fallbackAlt;
 }
+// function handleImageError(event) {
+//     event.target.src = new URL(`/src/assets/images/${fallbackImage}`, import.meta.url).href;
+//     event.target.alt = fallbackAlt;
+// }
 </script>
 
 <template>

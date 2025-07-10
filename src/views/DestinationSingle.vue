@@ -70,12 +70,19 @@ const deleteDestination = async () => {
 
 const imageSrc = computed(() => {
     if (!destination.value) return '';
-    const filename = destination.value.imageUrl || fallbackImage;
-    return new URL(`../assets/images/${filename}`, import.meta.url).href;
+    const filename = destination.value?.imageUrl || fallbackImage;
+    return `../media/${filename}`;
+    // return new URL(`../assets/images/${filename}`, import.meta.url).href;
 });
 
 const imageAlt = computed(() => {
     return destination.value?.imageAlt || fallbackAlt;
+});
+
+const filteredTags = computed(() => {
+    return destination.value?.tags.filter(
+        tag => tag !== 'top' && tag !== 'pinned' && tag !== 'grid'
+    );
 });
 </script>
 
@@ -97,7 +104,7 @@ const imageAlt = computed(() => {
                     <h1 class="text-3xl md:text-5xl font-bold mb-4">{{ destination.title }}</h1>
                     <p class="text-gray-600 mb-4"><strong>Location:</strong> {{ destination.destination }}</p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span v-for="tag in destination.tags" :key="tag"
+                        <span v-for="tag in filteredTags" :key="tag"
                             class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-100">
                             #{{ tag }}
                         </span>

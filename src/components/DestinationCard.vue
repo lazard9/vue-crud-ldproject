@@ -10,10 +10,12 @@ const { destination, showTags = false } = defineProps({
 const fallbackImage = "minimalist-destination-card-01.jpg";
 const fallbackAlt = "Minimalist illustration card";
 
-const imageSrc = new URL(
-    `../assets/images/${destination.imageUrl || fallbackImage}`,
-    import.meta.url
-).href;
+const imageSrc = `/media/${destination.imageUrl || fallbackImage}`;
+// Import from src/assets/images
+// const imageSrc = new URL(
+//     `../assets/images/${destination.imageUrl || fallbackImage}`,
+//     import.meta.url
+// ).href;
 
 const imageAlt = destination.imageAlt || fallbackAlt;
 
