@@ -13,6 +13,8 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 📱 Fully responsive design optimized for desktop, tablet, and mobile devices
 - 🌐 Vue Router with dynamic routes and slug validation
 - 📝 Add/Edit destination form with client-side validation
+  - 🖼️ Image upload field with preview and camera overlay (manual image placement required in /public/media due to browser security restrictions)
+  - 🏷️ Tags input with comma-separated parsing and validation
 - 🔤 Unique slug generation logic
 - 🚫 Automatic redirect to `/404` for non-existent slugs
 - 🗂 Local mock backend via JSON Server
