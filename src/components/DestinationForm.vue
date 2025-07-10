@@ -3,6 +3,8 @@ import { reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { v4 as uuidv4 } from 'uuid';
 
+import TipTapEditor from '@/components/TipTapEditor.vue';
+
 const props = defineProps({
     existingData: {
         type: Object,
@@ -137,9 +139,10 @@ async function generateUniqueSlug(title) {
 
         <div>
             <label class="block text-sm font-medium text-[var(--color-heading)] mb-1">Description</label>
-            <textarea v-model="form.description" rows="5"
+            <!-- <textarea v-model="form.description" rows="5"
                 class="w-full px-3 py-2 rounded-md border border-[var(--color-border)] bg-[var(--color-background-soft)] text-[var(--color-text)] placeholder-gray-400 focus:outline-none focus:border-[var(--color-border-hover)] transition"
-                placeholder="Full destination description"></textarea>
+                placeholder="Full destination description"></textarea> -->
+            <TipTapEditor v-model="form.description" />
             <p v-if="errors.description" class="text-red-500 text-sm mt-1">{{ errors.description }}</p>
         </div>
 
