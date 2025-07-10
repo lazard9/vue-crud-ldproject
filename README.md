@@ -34,8 +34,6 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 
 - 📦 src/
   - 📄 App.vue
-  - 📄 AppCompositionApi.vue
-  - 📄 AppOptionsApi.vue
   - 📄 main.js
   - 📄 router.js
   - 📁 assets/
@@ -49,9 +47,19 @@ It was inspired by a YouTube tutorial but developed completely independently wit
     - 📄 DestinationCard.vue
     - 📄 DestinationForm.vue
     - 📄 DestinationsGrid.vue
+    - 📄 DestinationsSlider.vue
     - 📄 Footer.vue
     - 📄 HeroSection.vue
+    - 📄 LoginModal.vue
+    - 📄 Navbar.vue
+    - 📄 ParallaxSection.vue
     - 📄 Spinner.vue
+    - 📄 SubscribeToForm.vue
+    - 📄 TipTapEditor.vue
+  - 📁 stores/ - Pinia store modules
+    - auth.js - Auth logic using Pinia store
+  - 📁 utils/ - Utility functions
+    - auth.js - Auth logic used with provide/inject and props
   - 📁 views/
     - 📄 Home.vue
     - 📄 Destinations.vue
