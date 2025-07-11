@@ -13,7 +13,7 @@ const props = defineProps({
     },
     tagClass: {
         type: String,
-        default: 'bg-black bg-opacity-40 text-white text-xs px-2 py-1 rounded-full hover:bg-opacity-60 transition-colors'
+        default: 'bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full hover:bg-opacity-80 transition-colors'
     }
 })
 
