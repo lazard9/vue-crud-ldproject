@@ -10,7 +10,7 @@ const props = defineProps({
         required: false,
         validator: val => val >= 0
     },
-    tag: {
+    filterTag: {
         type: String,
         required: false
     },
@@ -45,9 +45,9 @@ onMounted(async () => {
 const limitedDestinations = computed(() => {
     let filtered = destinations.value;
 
-    if (props.tag) {
+    if (props.filterTag) {
         filtered = filtered.filter(dest =>
-            dest.tags?.includes(props.tag)
+            dest.tags?.includes(props.filterTag)
         );
     }
 
@@ -62,7 +62,15 @@ const limitedDestinations = computed(() => {
         <div v-if="loading" class="flex justify-center py-20">
             <Spinner size="10" />
         </div>
-        <div v-else-if="error" class="text-red-600 text-center py-20">{{ error }}</div>
+
+        <div v-else-if="error" class="text-red-600 text-center py-20">
+            {{ error }}
+        </div>
+
+        <div v-else-if="limitedDestinations.length === 0" class="text-neutral-500 text-center py-20">
+            No destinations found for this tag.
+        </div>
+
         <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <DestinationCard v-for="destination in limitedDestinations" :key="destination.id" :destination="destination"
                 :show-tags="showTags" />

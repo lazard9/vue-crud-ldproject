@@ -1,22 +1,39 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { isLoggedIn } from '@/utils/auth';
+import { createRouter, createWebHistory } from "vue-router";
+import { isLoggedIn } from "@/utils/auth";
 
 const routes = [
-    { path: '/', component: () => import('./views/Home.vue') },
-    { path: '/destinations', component: () => import('./views/Destinations.vue') },
-    { path: '/destinations/:slug', component: () => import('./views/DestinationSingle.vue') },
+    { path: "/", component: () => import("./views/Home.vue") },
     {
-        path: '/destinations/add',
-        component: () => import('./views/DestinationAdd.vue'),
-        meta: { requiresAuth: true } // guard
+        path: "/destinations",
+        component: () => import("./views/Destinations.vue"),
     },
     {
-        path: '/destinations/edit/:slug',
-        component: () => import('./views/DestinationEdit.vue'),
-        meta: { requiresAuth: true } // guard
+        path: "/destinations/:slug",
+        component: () => import("./views/DestinationSingle.vue"),
     },
-    { path: '/:pathMatch(.*)*', component: () => import('./views/NotFound.vue') }
-]
+    {
+        path: "/destinations/add",
+        component: () => import("./views/DestinationAdd.vue"),
+        meta: { requiresAuth: true }, // guard
+    },
+    {
+        path: "/destinations/edit/:slug",
+        component: () => import("./views/DestinationEdit.vue"),
+        meta: { requiresAuth: true }, // guard
+    },
+    {
+        path: "/destinations/tags/:tag",
+        component: () => import("./views/Destinations.vue"),
+    },
+    {
+        path: "/destinations/tags",
+        redirect: "/destinations",
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        component: () => import("./views/NotFound.vue"),
+    },
+];
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,21 +44,21 @@ const router = createRouter({
         } else {
             return { top: 0 };
         }
-    }
+    },
 });
 
 // global guard
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !isLoggedIn()) {
-        alert('You are not logged in!')
-        next('/')
+        alert("You are not logged in!");
+        next("/");
     } else {
-        next()
+        next();
     }
-})
-
-router.afterEach(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
 });
 
-export default router
+router.afterEach(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+});
+
+export default router;

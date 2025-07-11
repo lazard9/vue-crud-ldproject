@@ -1,10 +1,11 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import Spinner from '../components/Spinner.vue';
+import { ref, onMounted, computed } from "vue";
+import { useRoute, useRouter, RouterLink } from "vue-router";
+import TagsList from "../components/TagsList.vue";
+import Spinner from "../components/Spinner.vue";
 // import data from '@/data/destinations.json';
 
-const { loggedIn } = defineProps({ loggedIn: Boolean })
+const { loggedIn } = defineProps({ loggedIn: Boolean });
 
 const route = useRoute();
 const router = useRouter(); // for redirect
@@ -14,15 +15,17 @@ const error = ref(null);
 const loading = ref(true);
 const deleting = ref(false);
 
-const fallbackImage = 'minimalist-destination-card-01.jpg';
-const fallbackAlt = 'Minimalist illustration card';
+const fallbackImage = "minimalist-destination-card-01.jpg";
+const fallbackAlt = "Minimalist illustration card";
 
 // destination.value = data.find(d => d.slug === route.params.slug);
 
 onMounted(async () => {
     loading.value = true;
     try {
-        const response = await fetch(`/api/destinations?slug=${route.params.slug}`);
+        const response = await fetch(
+            `/api/destinations?slug=${route.params.slug}`
+        );
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -31,14 +34,14 @@ onMounted(async () => {
         const data = await response.json();
 
         if (!data.length) {
-            router.replace('/404');
-            return
+            router.replace("/404");
+            return;
         }
 
         destination.value = data[0] || null; // returns an array
     } catch (err) {
         error.value = err.message;
-        console.error('Fetch error:', err);
+        console.error("Fetch error:", err);
     } finally {
         loading.value = false;
     }
@@ -47,29 +50,34 @@ onMounted(async () => {
 const deleteDestination = async () => {
     if (!destination.value?.id) return;
 
-    const confirmed = confirm('Are you sure you want to delete this destination?');
+    const confirmed = confirm(
+        "Are you sure you want to delete this destination?"
+    );
     if (!confirmed) return;
 
     deleting.value = true;
     try {
-        const response = await fetch(`/api/destinations/${destination.value.id}`, {
-            method: 'DELETE',
-        });
+        const response = await fetch(
+            `/api/destinations/${destination.value.id}`,
+            {
+                method: "DELETE",
+            }
+        );
 
         if (!response.ok) {
             throw new Error(`Failed to delete: ${response.status}`);
         }
 
-        router.push('/destinations'); // redirect
+        router.push("/destinations"); // redirect
     } catch (err) {
-        console.error('Delete error:', err);
+        console.error("Delete error:", err);
     } finally {
         deleting.value = false;
     }
 };
 
 const imageSrc = computed(() => {
-    if (!destination.value) return '';
+    if (!destination.value) return "";
     const filename = destination.value?.imageUrl || fallbackImage;
     return `../media/${filename}`;
     // return new URL(`../assets/images/${filename}`, import.meta.url).href;
@@ -77,12 +85,6 @@ const imageSrc = computed(() => {
 
 const imageAlt = computed(() => {
     return destination.value?.imageAlt || fallbackAlt;
-});
-
-const filteredTags = computed(() => {
-    return destination.value?.tags.filter(
-        tag => tag !== 'top' && tag !== 'pinned' && tag !== 'grid'
-    );
 });
 </script>
 
@@ -101,16 +103,19 @@ const filteredTags = computed(() => {
             <div v-if="!loading && destination">
                 <div v-if="destination">
                     <img :src="imageSrc" :alt="imageAlt" class="w-full max-h-96 object-cover rounded-xl mb-8" />
-                    <h1 class="text-3xl md:text-5xl font-bold mb-4">{{ destination.title }}</h1>
-                    <p class="text-gray-600 mb-4"><strong>Location:</strong> {{ destination.destination }}</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span v-for="tag in filteredTags" :key="tag"
-                            class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-100">
-                            #{{ tag }}
-                        </span>
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">
+                        {{ destination.title }}
+                    </h1>
+                    <p class="text-gray-600 mb-4">
+                        <strong>Location:</strong> {{ destination.destination }}
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6" v-if="destination.tags">
+                        <TagsList :tags="destination.tags" />
                     </div>
                     <div class="tiptap-content mb-8" v-html="destination.description"></div>
-                    <p class="text-xl font-semibold text-sky-700 dark:text-sky-300">Price: ${{ destination.price }}</p>
+                    <p class="text-xl font-semibold text-sky-700 dark:text-sky-300">
+                        Price: ${{ destination.price }}
+                    </p>
                 </div>
                 <div v-else>
                     <p>Destination not found.</p>
