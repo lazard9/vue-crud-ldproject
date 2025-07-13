@@ -9,7 +9,7 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 
 ## Acknowledgements
 
-This project is essentially a small blog focused on travel destinations. It is built upon nearly 10 years of backend experience, primarily in WordPress, with additional exposure to NextJS, NuxtJS, and some Django.
+This project is essentially a small blog focused on travel destinations. It is built upon nearly 10 years of backend and frontend experience, primarily custom development in WordPress, with additional exposure to NextJS, NuxtJS, and some Django.
 
 The development process was greatly enhanced by assistants such as ChatGPT and Windsurf, which provided guidance on learning and technical solutions as well as help with documentation. Meanwhile, Sora was used to generate images based on custom prompt queries, enriching the visual content of the app.
 
@@ -68,9 +68,11 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
     - 📄 HeroSection.vue
     - 📄 LoginModal.vue
     - 📄 Navbar.vue
+    - 📄 Pagination.vue
     - 📄 ParallaxSection.vue
     - 📄 Spinner.vue
     - 📄 SubscribeToForm.vue
+    - 📄 TagsList.vue
     - 📄 TipTapEditor.vue
   - 📁 stores/ - Pinia store modules
     - auth.js - Auth logic using Pinia store
