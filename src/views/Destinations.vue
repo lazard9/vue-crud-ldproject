@@ -28,7 +28,7 @@ function capitalizeFirstLetter(val) {
                 {{ tag ? `Selected tag: ${capitalizeFirstLetter(tag)}` : "Browse all Destinations" }}
             </h2>
 
-            <DestinationsGrid :show-tags="true" :filter-tag="tag" />
+            <DestinationsGrid :posts-per-page="8" :show-tags="true" />
         </section>
     </main>
 </template>
