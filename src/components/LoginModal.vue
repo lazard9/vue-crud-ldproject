@@ -24,10 +24,6 @@ async function handleLogin() {
     }
 }
 
-// function copyToClipboard(text) {
-//     navigator.clipboard.writeText(text);
-// }
-
 function copyToClipboard(field) {
     const value = field === 'admin' ? 'admin' : 'password'
 

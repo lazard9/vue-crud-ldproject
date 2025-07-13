@@ -7,6 +7,14 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 
 ---
 
+## Acknowledgements
+
+This project is essentially a small blog focused on travel destinations. It is built upon nearly 10 years of backend experience, primarily in WordPress, with additional exposure to NextJS, NuxtJS, and some Django.
+
+The development process was greatly enhanced by assistants such as ChatGPT and Windsurf, which provided guidance on learning and technical solutions as well as help with documentation. Meanwhile, Sora was used to generate images based on custom prompt queries, enriching the visual content of the app.
+
+---
+
 ## Features
 
 - ⚡ Vue 3 + Composition API with Vite
@@ -33,6 +41,8 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 🔗 Clickable tags: Tags displayed as clickable links that navigate to corresponding filtered views.
 - ♻️ Modular tag component: Reusable tag list component with customizable styles and exclusion logic for special tags (e.g. top, pinned, grid).
 - ⚡ Optimized UX: Capitalized tag titles and conditional rendering of headings based on tag presence.
+- 🧩 Extracted API layer into reusable functions for cleaner separation of concerns and easier backend integration.
+- 📄 Pagination system with flexible `limit` and `postsPerPage` props, supporting filtered views and UI feedback on disabled navigation buttons.
 
 ---
 
