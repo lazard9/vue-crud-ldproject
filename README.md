@@ -52,13 +52,13 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
   - 📄 App.vue
   - 📄 main.js
   - 📄 router.js
-  - 📁 api/
+  - 📁 api/ - Reusable API functions for external data fetching
     - 📄 destinations.js
   - 📁 assets/
     - 📄 (images, styles...)
   - 📁 data/
-    - 📄 destinations.json — Static data (optional)
-    - 📄 destinations-server.json — Used by JSON Server (live data)
+    - 📄 destinations.json - Static data (optional)
+    - 📄 destinations-server.json - Used by JSON Server (live data)
   - 📁 components/
     - 📄 CtaCard.vue
     - 📄 CtaCardsContainer.vue
@@ -76,7 +76,7 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
     - 📄 SubscribeToForm.vue
     - 📄 TagsList.vue
     - 📄 TipTapEditor.vue
-  - 📁 composables/
+  - 📁 composables/ - Reusable logic & custom Composition API functions
     - 📄 useShowSubscribe.js
   - 📁 stores/ - Pinia store modules
     - auth.js - Auth logic using Pinia store
