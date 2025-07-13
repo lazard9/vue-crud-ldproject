@@ -2,6 +2,8 @@
 import { ref, computed, onMounted } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import Spinner from '@/components/Spinner.vue';
+import { getAllDestinations } from '@/api/destinations';
 
 const props = defineProps({
     tag: {
@@ -16,15 +18,9 @@ const error = ref(null);
 
 onMounted(async () => {
     try {
-        const response = await fetch('/api/destinations');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        destinations.value = data;
+        destinations.value = await getAllDestinations();
     } catch (err) {
         error.value = err.message;
-        console.error('Fetch error:', err);
     } finally {
         loading.value = false;
     }
@@ -58,7 +54,10 @@ function handleImageError(event) {
 </script>
 
 <template>
-    <p v-if="loading">Loading...</p>
+    <div v-if="loading" class="flex justify-center py-20">
+        <Spinner size="10" />
+    </div>
+
     <p v-else-if="error" class="text-red-500">Error: {{ error }}</p>
 
     <Swiper v-else :slides-per-view="1.2" :space-between="20" :loop="true"

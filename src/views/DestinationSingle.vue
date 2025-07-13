@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter, RouterLink } from "vue-router";
-import TagsList from "../components/TagsList.vue";
-import Spinner from "../components/Spinner.vue";
-// import data from '@/data/destinations.json';
+import TagsList from "@/components/TagsList.vue";
+import Spinner from "@/components/Spinner.vue";
+import { getDestinationBySlug, deleteDestinationById } from '@/api/destinations';
 
 const { loggedIn } = defineProps({ loggedIn: Boolean });
 
@@ -18,30 +18,14 @@ const deleting = ref(false);
 const fallbackImage = "minimalist-destination-card-01.jpg";
 const fallbackAlt = "Minimalist illustration card";
 
-// destination.value = data.find(d => d.slug === route.params.slug);
-
 onMounted(async () => {
-    loading.value = true;
     try {
-        const response = await fetch(
-            `/api/destinations?slug=${route.params.slug}`
-        );
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        destination.value = await getDestinationBySlug(route.params.slug);
+        if (!destination.value) {
+            router.replace('/404');
         }
-
-        const data = await response.json();
-
-        if (!data.length) {
-            router.replace("/404");
-            return;
-        }
-
-        destination.value = data[0] || null; // returns an array
     } catch (err) {
         error.value = err.message;
-        console.error("Fetch error:", err);
     } finally {
         loading.value = false;
     }
@@ -50,25 +34,13 @@ onMounted(async () => {
 const deleteDestination = async () => {
     if (!destination.value?.id) return;
 
-    const confirmed = confirm(
-        "Are you sure you want to delete this destination?"
-    );
+    const confirmed = confirm("Are you sure?");
     if (!confirmed) return;
 
     deleting.value = true;
     try {
-        const response = await fetch(
-            `/api/destinations/${destination.value.id}`,
-            {
-                method: "DELETE",
-            }
-        );
-
-        if (!response.ok) {
-            throw new Error(`Failed to delete: ${response.status}`);
-        }
-
-        router.push("/destinations"); // redirect
+        await deleteDestinationById(destination.value.id);
+        router.push('/destinations');
     } catch (err) {
         console.error("Delete error:", err);
     } finally {
@@ -79,7 +51,7 @@ const deleteDestination = async () => {
 const imageSrc = computed(() => {
     if (!destination.value) return "";
     const filename = destination.value?.imageUrl || fallbackImage;
-    return `../media/${filename}`;
+    return `/media/${filename}`;
     // return new URL(`../assets/images/${filename}`, import.meta.url).href;
 });
 

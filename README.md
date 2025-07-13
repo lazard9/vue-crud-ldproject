@@ -29,8 +29,7 @@ It was inspired by a YouTube tutorial but developed completely independently wit
 - 💾 Local caching and fallback images for destinations with missing or broken images
 - 🔖 Tag filtering and dynamic tag display with exclusion of specific tags (e.g. top, pinned)
 - 🧹 Smooth scroll navigation to subscription form section
-- 🔖 Tag filtering: Dynamic filtering of destinations by tags via /destinations/tags/:tag route,
-with unified component handling both all and filtered views.
+- 🔖 Tag filtering: Dynamic filtering of destinations by tags via /destinations/tags/:tag route, with unified component handling both all and filtered views.
 - 🔗 Clickable tags: Tags displayed as clickable links that navigate to corresponding filtered views.
 - ♻️ Modular tag component: Reusable tag list component with customizable styles and exclusion logic for special tags (e.g. top, pinned, grid).
 - ⚡ Optimized UX: Capitalized tag titles and conditional rendering of headings based on tag presence.

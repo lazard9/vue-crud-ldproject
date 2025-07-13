@@ -1,8 +1,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import DestinationCard from './DestinationCard.vue';
-import Spinner from './Spinner.vue';
-// import data from '@/data/destinations.json';
+import Spinner from '@/components/Spinner.vue';
+import { getAllDestinations } from '@/api/destinations';
 
 const props = defineProps({
     limit: {
@@ -25,18 +25,10 @@ const error = ref(null);
 const loading = ref(true);
 
 onMounted(async () => {
-    // destinations.value = data;
-
     try {
-        const response = await fetch('/api/destinations');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        destinations.value = data;
+        destinations.value = await getAllDestinations();
     } catch (err) {
         error.value = err.message;
-        console.error('Fetch error:', err);
     } finally {
         loading.value = false;
     }

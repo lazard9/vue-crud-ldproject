@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import { v4 as uuidv4 } from 'uuid';
+import { saveDestination } from '@/api/destinations';
 
 import TipTapEditor from '@/components/TipTapEditor.vue';
 
@@ -74,51 +74,15 @@ function validateForm() {
 async function handleSubmit() {
     if (!validateForm()) return;
 
-    const method = props.existingData ? 'PATCH' : 'POST';
-    const url = props.existingData
-        ? `/api/destinations/${props.existingData.id}`
-        : '/api/destinations';
-
-    const payload = {
-        ...form,
-    };
-
-    if (props.existingData) {
-        payload.slug = props.existingData.slug;
-    } else {
-        payload.slug = await generateUniqueSlug(form.title);
-        payload.id = uuidv4();
-    }
-
-    if (imageFile.value) {
-        payload.imageUrl = imageFile.value.name;
-        payload.imageAlt = generateImageAlt(imageFile.value.name);
-    } else if (payload.imageUrl && !payload.imageAlt) {
-        payload.imageAlt = generateImageAlt(payload.imageUrl);
-    } else if (!payload.imageAlt) {
-        payload.imageAlt = 'Destination image';
-    }
-
-    const parsedTags = form.tags
-        .split(',')
-        .map(tag => tag.trim())
-        .filter(tag => tag.length > 0);
-
-    payload.tags = parsedTags;
-
     try {
-        const response = await fetch(url, {
-            method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to save destination');
-        }
+        const slug = await saveDestination({
+            ...form,
+            imageFile: imageFile.value,
+            tags: form.tags,
+        }, props.existingData);
 
         const redirectTo = props.existingData
-            ? `/destinations/${payload.slug}`
+            ? `/destinations/${slug}`
             : '/destinations';
 
         router.push(redirectTo);
@@ -126,42 +90,6 @@ async function handleSubmit() {
         errors.global = error.message || 'An unexpected error occurred';
     }
 }
-
-async function generateUniqueSlug(title) {
-    const baseSlug = title.toLowerCase().trim().replace(/\s+/g, '-');
-    const res = await fetch(`/api/destinations?slug_like=${baseSlug}`);
-    const data = await res.json();
-
-    if (!data.length) return baseSlug;
-
-    let counter = 1;
-    let newSlug = `${baseSlug}-${counter}`;
-    const existingSlugs = data.map(d => d.slug);
-
-    while (existingSlugs.includes(newSlug)) {
-        counter++;
-        newSlug = `${baseSlug}-${counter}`;
-    }
-
-    return newSlug;
-}
-
-function generateImageAlt(filename) {
-    if (!filename) return 'Destination image';
-
-    const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
-
-    const isGibberish = /^[\d\W_]+$/.test(nameWithoutExt) || /^[a-z0-9_-]{3,}$/.test(nameWithoutExt) && !/[aeiou]/i.test(nameWithoutExt);
-
-    if (isGibberish) return 'Destination image';
-
-    return nameWithoutExt
-        .replace(/[-_]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .replace(/\b\w/g, l => l.toUpperCase())
-        .trim();
-}
-
 </script>
 
 <template>
