@@ -52,6 +52,8 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
   - 📄 App.vue
   - 📄 main.js
   - 📄 router.js
+  - 📁 api/
+    - 📄 destinations.js
   - 📁 assets/
     - 📄 (images, styles...)
   - 📁 data/
@@ -74,6 +76,8 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
     - 📄 SubscribeToForm.vue
     - 📄 TagsList.vue
     - 📄 TipTapEditor.vue
+  - 📁 composables/
+    - 📄 useShowSubscribe.js
   - 📁 stores/ - Pinia store modules
     - auth.js - Auth logic using Pinia store
   - 📁 utils/ - Utility functions
