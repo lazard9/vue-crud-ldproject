@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import DestinationCard from "./DestinationCard.vue";
 import Pagination from "./Pagination.vue";
 import Spinner from "@/components/Spinner.vue";
@@ -29,6 +29,10 @@ onMounted(async () => {
     } finally {
         loading.value = false;
     }
+});
+
+watch(() => props.filterTag, () => {
+    currentPage.value = 1;
 });
 
 /* 
