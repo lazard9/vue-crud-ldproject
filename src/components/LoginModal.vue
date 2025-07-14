@@ -12,6 +12,14 @@ const error = ref("");
 const usernameInput = ref(null)
 onMounted(() => usernameInput.value?.focus());
 
+/**
+ * Handles login form submission.
+ * @async
+ * @function
+ * @param {string} username - Username to log in with.
+ * @param {string} password - Password to log in with.
+ * @returns {Promise<void>}
+ */
 async function handleLogin() {
     const result = await auth.login(username.value, password.value);
 
@@ -24,6 +32,13 @@ async function handleLogin() {
     }
 }
 
+/**
+ * Copies the provided field value (either "admin" or "password") to the
+ * user's clipboard. If the corresponding input field is empty, the value
+ * is also set as the input field value. The function also temporarily
+ * displays a "copied" indicator next to the field.
+ * @param {string} field - The field to copy ("admin" or "password")
+ */
 function copyToClipboard(field) {
     const value = field === 'admin' ? 'admin' : 'password'
 

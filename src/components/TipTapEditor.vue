@@ -13,6 +13,19 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
+/**
+ * Initializes the TipTap editor with initial content from `props.modelValue`
+ * and loads the required extensions (StarterKit + Placeholder).
+ * 
+ * On every content update inside the editor, the new HTML is emitted
+ * to the parent component via the `update:modelValue` event.
+ * 
+ * A watcher is also set up to listen for changes to `props.modelValue`.
+ * If the external value differs from the current editor content,
+ * the editor content is updated accordingly.
+ * 
+ * This ensures two-way synchronization between the parent model and the editor.
+ */
 const editor = useEditor({
     content: props.modelValue || '',
     extensions: [
@@ -21,6 +34,18 @@ const editor = useEditor({
             placeholder: 'Full destination description...',
         }),
     ],
+
+    /**
+     * Handles editor content updates.
+     * 
+     * This function is triggered whenever the content inside the editor is updated.
+     * It checks if the editor exists and has a `getHTML` method. If so, it emits
+     * the current HTML content of the editor using the `update:modelValue` event.
+     * This ensures the parent component's model is synchronized with the editor's content.
+     * 
+     * @param {Object} param - An object containing the editor instance.
+     * @param {Editor} param.editor - The editor instance with content manipulation methods.
+     */
     onUpdate: ({ editor }) => {
         if (editor && typeof editor.getHTML === 'function') {
             emit('update:modelValue', editor.getHTML());

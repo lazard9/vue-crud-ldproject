@@ -9,6 +9,11 @@ const props = defineProps({
 
 const emit = defineEmits(["page-change"]);
 
+/**
+ * Emits the "page-change" event if the given page number is within range
+ * (1 <= page <= totalPages). Otherwise, does nothing.
+ * @param {number} page
+ */
 const emitPageChange = (page) => {
     if (page >= 1 && page <= props.totalPages) {
         emit("page-change", page);

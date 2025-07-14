@@ -14,27 +14,27 @@ const router = useRouter();
 const auth = useAuthStore();
 const loggedIn = computed(() => auth.loggedIn);
 
+/**
+ * Checks if the current route path matches the given path.
+ * @param {string} path
+ * @returns {boolean}
+ */
 const isActiveLink = (path) => {
     return route.path === path;
 };
 
+/**
+ * Logs the user out and redirects to the home page.
+ */
 function handleLogout() {
     auth.logout();
     router.push('/');
 }
 
-// async function goToSubscription() {
-//     if (route.path !== '/') {
-//         await router.push('/');
-//         setTimeout(() => {
-//             const el = document.getElementById('subscription');
-//             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-//         }, 300);
-//     } else {
-//         scrollToSubscription();
-//     }
-// }
-
+/**
+ * Scrolls to the subscription form element smoothly and closes the mobile menu.
+ * @method
+ */
 function scrollToSubscription() {
     const el = document.getElementById('subscription');
     if (el) {
@@ -55,12 +55,6 @@ function scrollToSubscription() {
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-6">
-                    <!-- <RouterLink
-                        to="/"
-                        class="hover:text-[var(--color-heading)] no-underline transition-colors duration-200"
-                        >Home</RouterLink
-                    > -->
-
                     <RouterLink to="/destinations" :class="[
                         isActiveLink('/destinations')
                             ? 'text-[var(--color-heading)]'
@@ -105,7 +99,6 @@ function scrollToSubscription() {
 
             <!-- Mobile Menu -->
             <div v-if="isOpen" class="md:hidden mt-2 space-y-2 pb-4">
-                <!-- <RouterLink to="/" class="block px-2 py-1 hover:text-[var(--color-heading)] no-underline">Home</RouterLink> -->
                 <RouterLink to="/destinations" :class="[
                     isActiveLink('/destinations')
                         ? 'text-[var(--color-heading)]'

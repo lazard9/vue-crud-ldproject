@@ -99,6 +99,11 @@ export async function saveDestination(data, existingData) {
     return payload.slug;
 }
 
+/**
+ * Generates a unique slug based on a given title.
+ * @param {string} title
+ * @returns {Promise<string>} The generated slug
+ */
 export async function generateUniqueSlug(title) {
     const baseSlug = title.toLowerCase().trim().replace(/\s+/g, '-');
     const response = await fetch(`${BASE_URL}?slug_like=${baseSlug}`);
@@ -118,16 +123,26 @@ export async function generateUniqueSlug(title) {
     return newSlug;
 }
 
+/**
+ * Generates an image alt text from a filename.
+ *
+ * If the filename is blank or is unsuitable, returns "Destination image". Otherwise,
+ * returns the filename without extension, with dashes and underscores replaced
+ * with spaces, and with the first letter of each word capitalized.
+ *
+ * @param {string} filename - The image filename
+ * @returns {string} The generated image alt text
+ */
 export function generateImageAlt(filename) {
     if (!filename) return 'Destination image';
 
     const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
 
-    const isGibberish =
+    const isUnsuitableFilename =
         /^[\d\W_]+$/.test(nameWithoutExt) ||
         (/^[a-z0-9_-]{3,}$/.test(nameWithoutExt) && !/[aeiou]/i.test(nameWithoutExt));
 
-    if (isGibberish) return 'Destination image';
+    if (isUnsuitableFilename) return 'Destination image';
 
     return nameWithoutExt
         .replace(/[-_]/g, ' ')

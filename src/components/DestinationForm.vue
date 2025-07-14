@@ -49,6 +49,12 @@ onMounted(() => {
 const imagePreview = ref('');
 const imageFile = ref(null);
 
+/**
+ * Handles an image upload event by setting the imagePreview and imageFile
+ * reactive state variables.
+ *
+ * @param {Event} event - The input event that triggered the function.
+ */
 function handleImageUpload(event) {
     const file = event.target.files[0];
     if (file) {
@@ -57,6 +63,13 @@ function handleImageUpload(event) {
     }
 }
 
+/**
+ * Validates the destination form by checking if all required fields have been filled in correctly.
+ * The function sets the errors reactive state variable with error messages if any of the
+ * required fields are not valid.
+ *
+ * @returns {Boolean} true if the form is valid, false otherwise.
+ */
 function validateForm() {
     let valid = true;
     errors.title = form.title ? '' : 'Title is required';
@@ -71,6 +84,18 @@ function validateForm() {
     return valid;
 }
 
+/**
+ * Handles the submission of the destination form by validating the form data, saving
+ * the destination to the API, and redirecting the user to the destination page.
+ *
+ * If the form is invalid, the form is not submitted and the `errors` reactive state
+ * variable is populated with error messages for each invalid field.
+ *
+ * If the form is valid, the destination is saved to the API and the user is
+ * redirected to the destination page. If an error occurs while saving the
+ * destination, the `errors` reactive state variable is populated with a global
+ * error message.
+ */
 async function handleSubmit() {
     if (!validateForm()) return;
 

@@ -35,22 +35,27 @@ const filteredDestinations = computed(() =>
 const fallbackImage = "minimalist-destination-card-01.jpg";
 const fallbackAlt = "Minimalist illustration card";
 
+/**
+ * Return the URL for an image, or a fallback URL if the given URL is falsy.
+ * @param {string} [imageUrl] URL of the image to use. If falsy, falls back to the
+ *   `fallbackImage` exported by this module.
+ * @returns {string} The URL of the image to use.
+ */
 function getImageSrc(imageUrl) {
     return `/media/${imageUrl || fallbackImage}`;
 }
-// function getImageSrc(imageUrl) {
-//     const finalImage = imageUrl || fallbackImage;
-//     return new URL(`/src/assets/images/${finalImage}`, import.meta.url).href;
-// }
 
+/**
+ * Handles an image load error by setting the image's `src` attribute to
+ * the fallback image URL and setting its `alt` attribute to the
+ * fallback alt text.
+ *
+ * @param {Event} event - The error event that triggered this function.
+ */
 function handleImageError(event) {
     event.target.src = `/media/${fallbackImage}`;
     event.target.alt = fallbackAlt;
 }
-// function handleImageError(event) {
-//     event.target.src = new URL(`/src/assets/images/${fallbackImage}`, import.meta.url).href;
-//     event.target.alt = fallbackAlt;
-// }
 </script>
 
 <template>

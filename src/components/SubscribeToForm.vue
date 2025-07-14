@@ -4,6 +4,13 @@ import { ref } from 'vue';
 const email = ref('');
 const status = ref(null); // 'success', 'error', 'loading'
 
+/**
+ * Handles the form submission for subscribing to the newsletter.
+ * If the email is invalid, it sets the status to 'error'.
+ * If the email is valid, it sets the status to 'loading', and
+ * simulates sending the email (in a real app, this would be an API call)
+ * and sets the status to 'success' on success, or 'error' on failure.
+ */
 const handleSubmit = async () => {
     if (!email.value.includes('@')) {
         status.value = 'error';

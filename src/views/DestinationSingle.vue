@@ -31,6 +31,10 @@ onMounted(async () => {
     }
 });
 
+/**
+ * Deletes the current destination and redirects to /destinations
+ * if confirmed by user. Shows an error if deletion fails.
+ */
 const deleteDestination = async () => {
     if (!destination.value?.id) return;
 
@@ -52,7 +56,6 @@ const imageSrc = computed(() => {
     if (!destination.value) return "";
     const filename = destination.value?.imageUrl || fallbackImage;
     return `/media/${filename}`;
-    // return new URL(`../assets/images/${filename}`, import.meta.url).href;
 });
 
 const imageAlt = computed(() => {

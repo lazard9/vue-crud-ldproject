@@ -21,28 +21,31 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
 - 📱 Fully responsive design optimized for desktop, tablet, and mobile devices
 - 🌐 Vue Router with dynamic routes and slug validation
 - 📝 Add/Edit destination form with client-side validation
-  - 🖼️ Image upload field with preview and camera overlay (manual image placement required in /public/media due to browser security restrictions)
-  - 🏷️ Tags input with comma-separated parsing and validation
-- 🔤 Unique slug generation logic
+  - Image upload field with preview and camera overlay (manual image placement required in /public/media due to browser security restrictions)
+  - Tags input with comma-separated parsing and validation
+- 🔤 Automatic, SEO-friendly, and unique slug generation for each destination, used in dynamic routes.
 - 🚫 Automatic redirect to `/404` for non-existent slugs
 - 🗂 Local mock backend via JSON Server
 - 🧩 Minimal and clean UI built with custom components
 - 🌙 Light/Dark mode that automatically follows user device preference
 - 🔐 Mock login system with session-based auth (user: `admin`, password: `password`)
-- ✅ Click-to-copy credentials for easier testing
-- 🎯 Conditional UI rendering based on login status
-- 🔒 Route and UI protection based on login state
-- 🎨 Centered single CTA card for better layout when user is not logged in
+  - Click-to-copy credentials for easier testing and logging in
+  - Conditional UI rendering based on login status
+  - Route and UI protection based on login state
+  - Centered single CTA card for better layout when user is not logged in
 - 🎡 Dynamic, responsive, infinite swiper carousel with pagination and autoplay features
 - 💾 Local caching and fallback images for destinations with missing or broken images
-- 🔖 Tag filtering and dynamic tag display with exclusion of specific tags (e.g. top, pinned)
 - 🧹 Smooth scroll navigation to subscription form section
-- 🔖 Tag filtering: Dynamic filtering of destinations by tags via /destinations/tags/:tag route, with unified component handling both all and filtered views.
-- 🔗 Clickable tags: Tags displayed as clickable links that navigate to corresponding filtered views.
+- 🔖 Tag system with filtering and navigation
+  - Tags are displayed as clickable links for quick filtering.
+  - Dynamic route `/destinations/tags/:tag` shows only destinations with the selected tag.
+  - A single component handles both unfiltered and filtered views seamlessly.
+  - Optional exclusion of special tags (e.g. `top`, `pinned`) from the UI.
 - ♻️ Modular tag component: Reusable tag list component with customizable styles and exclusion logic for special tags (e.g. top, pinned, grid).
-- ⚡ Optimized UX: Capitalized tag titles and conditional rendering of headings based on tag presence.
+- ⚡ Optimized UX: Automatic capitalization of tag titles and contextual heading display.
 - 🧩 Extracted API layer into reusable functions for cleaner separation of concerns and easier backend integration.
-- 📄 Pagination system with flexible `limit` and `postsPerPage` props, supporting filtered views and UI feedback on disabled navigation buttons.
+- 📄 Pagination system with flexible `limit` and `postsPerPage` props, supporting both fixed-limit and dynamic per-page modes
+  - Also supports filtered views and disables navigation buttons when appropriate.
 
 ---
 
@@ -156,3 +159,5 @@ This project is based on the same core idea as the jobs listing project from the
 ## License
 
 This project is open for educational and personal use.
+
+| Built with curiosity and care by *Lazar Dačić* 👨‍💻
