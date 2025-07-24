@@ -43,12 +43,13 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
   - Optional exclusion of special tags (e.g. `top`, `pinned`) from the UI.
 - ♻️ Modular tag component: Reusable tag list component with customizable styles and exclusion logic for special tags (e.g. top, pinned, grid).
 - ⚡ Optimized UX: Automatic capitalization of tag titles and contextual heading display.
-- 🧩 Extracted API layer into reusable functions for cleaner separation of concerns and easier backend integration.
+- 🧩 Modular API layer for clean separation of concerns and plug-and-play backend integration.
 - 📄 Pagination system with flexible `limit` and `postsPerPage` props, supporting both fixed-limit and dynamic per-page modes
   - Also supports filtered views and disables navigation buttons when appropriate.
-- ✅ Unit and component testing setup with **Vitest**, **Vue Test Utils**, and **MSW**
-  - Tests cover core logic, API interactions, and UI components
-  - Dedicated `vite.config.ts` test environment with `import.meta.env` mocking
+- ✅ Comprehensive unit and component tests using **Vitest**, **Vue Test Utils**, and **MSW**
+  - Tests cover core business logic, API mocking, and component rendering/interactions
+  - Custom test environment and aliases configured in `vite.config.ts`
+  - Ensures async updates are properly awaited for consistent test behavior
 
 ---
 
@@ -71,16 +72,16 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
     - 📄 DestinationCard.vue
     - 📄 DestinationForm.vue
     - 📄 DestinationsGrid.vue
+    - 📄 DestinationsPagination.vue
     - 📄 DestinationsSlider.vue
+    - 📄 DestinationTagsList.vue
     - 📄 Footer.vue
     - 📄 HeroSection.vue
     - 📄 LoginModal.vue
     - 📄 Navbar.vue
-    - 📄 Pagination.vue
     - 📄 ParallaxSection.vue
     - 📄 Spinner.vue
     - 📄 SubscribeToForm.vue
-    - 📄 TagsList.vue
     - 📄 TipTapEditor.vue
   - 📁 composables/ - Reusable logic & custom Composition API functions
     - 📄 useShowSubscribe.js
