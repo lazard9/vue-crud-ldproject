@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from "vue";
 import DestinationCard from "./DestinationCard.vue";
-import Pagination from "./Pagination.vue";
+import Pagination from "./DestinationsPagination.vue";
 import Spinner from "@/components/Spinner.vue";
 import { getAllDestinations } from "@/api/destinations";
 

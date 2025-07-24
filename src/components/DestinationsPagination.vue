@@ -1,4 +1,4 @@
-<!-- components/Pagination.vue -->
+<!-- components/DestinationsPagination.vue -->
 <script setup>
 import { computed } from "vue";
 

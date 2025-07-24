@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter, RouterLink } from "vue-router";
-import TagsList from "@/components/TagsList.vue";
+import TagsList from "@/components/DestinationTagList.vue";
 import Spinner from "@/components/Spinner.vue";
 import { getDestinationBySlug, deleteDestinationById } from '@/api/destinations';
 

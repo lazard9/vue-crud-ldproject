@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import TagsList from './TagsList.vue';
+import TagsList from './DestinationTagList.vue';
 
 const { destination, showTags = false } = defineProps({
     destination: Object,
