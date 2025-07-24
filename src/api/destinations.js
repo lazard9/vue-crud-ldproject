@@ -1,8 +1,12 @@
 // src/api/destinations.js
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-const BASE_URL = '/api/destinations';
+let BASE_URL = "/api/destinations"; // default
 
+// Vitest
+if (import.meta.env.MODE === "test" && import.meta.env.VITE_API_BASE_URL) {
+    BASE_URL = import.meta.env.VITE_API_BASE_URL;
+}
 
 /**
  * Fetches all destinations from the API.
@@ -15,7 +19,6 @@ export async function getAllDestinations() {
     if (!response.ok) throw new Error(`Failed to fetch destinations`);
     return await response.json();
 }
-
 
 /**
  * Fetches a destination by its slug from the API.
@@ -32,7 +35,6 @@ export async function getDestinationBySlug(slug) {
     return data[0] || null;
 }
 
-
 /**
  * Deletes a destination by its ID from the API.
  *
@@ -41,10 +43,14 @@ export async function getDestinationBySlug(slug) {
  * @throws {Error} If the API request fails.
  */
 export async function deleteDestinationById(id) {
-    const res = await fetch(`${BASE_URL}/${id}`, { method: 'DELETE' });
-    if (!res.ok) throw new Error(`Failed to delete`);
-}
+    const res = await fetch(`${BASE_URL}/${id}`, { method: "DELETE" });
 
+    if (!res.ok && res.status !== 204) {
+        throw new Error(
+            `Failed to delete destination with status: ${res.status}`
+        );
+    }
+}
 
 /**
  * Saves a destination to the API.
@@ -55,7 +61,7 @@ export async function deleteDestinationById(id) {
  * @throws {Error} If the API request fails.
  */
 export async function saveDestination(data, existingData) {
-    const method = existingData ? 'PATCH' : 'POST';
+    const method = existingData ? "PATCH" : "POST";
     const url = existingData ? `${BASE_URL}/${existingData.id}` : BASE_URL;
 
     const { imageFile, ...cleanData } = data;
@@ -74,27 +80,27 @@ export async function saveDestination(data, existingData) {
     } else if (payload.imageUrl && !payload.imageAlt) {
         payload.imageAlt = generateImageAlt(payload.imageUrl);
     } else if (!payload.imageAlt) {
-        payload.imageAlt = 'Destination image';
+        payload.imageAlt = "Destination image";
     }
 
     const parsedTags = data.tags
-        .split(',')
-        .map(tag => tag.trim())
-        .filter(tag => tag.length > 0);
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter((tag) => tag.length > 0);
 
     payload.tags = parsedTags;
 
     const response = await fetch(url, {
         method,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
-        throw new Error('Failed to save destination');
+        throw new Error("Failed to save destination");
     }
 
-    console.log('[Saving destination]', { method, url, payload });
+    console.log("[Saving destination]", { method, url, payload });
 
     return payload.slug;
 }
@@ -105,7 +111,7 @@ export async function saveDestination(data, existingData) {
  * @returns {Promise<string>} The generated slug
  */
 export async function generateUniqueSlug(title) {
-    const baseSlug = title.toLowerCase().trim().replace(/\s+/g, '-');
+    const baseSlug = title.toLowerCase().trim().replace(/\s+/g, "-");
     const response = await fetch(`${BASE_URL}?slug_like=${baseSlug}`);
     const data = await response.json();
 
@@ -113,7 +119,7 @@ export async function generateUniqueSlug(title) {
 
     let counter = 1;
     let newSlug = `${baseSlug}-${counter}`;
-    const existingSlugs = data.map(d => d.slug);
+    const existingSlugs = data.map((d) => d.slug);
 
     while (existingSlugs.includes(newSlug)) {
         counter++;
@@ -134,19 +140,20 @@ export async function generateUniqueSlug(title) {
  * @returns {string} The generated image alt text
  */
 export function generateImageAlt(filename) {
-    if (!filename) return 'Destination image';
+    if (!filename) return "Destination image";
 
-    const nameWithoutExt = filename.replace(/\.[^/.]+$/, '');
+    const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
 
     const isUnsuitableFilename =
         /^[\d\W_]+$/.test(nameWithoutExt) ||
-        (/^[a-z0-9_-]{3,}$/.test(nameWithoutExt) && !/[aeiou]/i.test(nameWithoutExt));
+        (/^[a-z0-9_-]{3,}$/.test(nameWithoutExt) &&
+            !/[aeiou]/i.test(nameWithoutExt));
 
-    if (isUnsuitableFilename) return 'Destination image';
+    if (isUnsuitableFilename) return "Destination image";
 
     return nameWithoutExt
-        .replace(/[-_]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .replace(/\b\w/g, l => l.toUpperCase())
+        .replace(/[-_]/g, " ")
+        .replace(/\s+/g, " ")
+        .replace(/\b\w/g, (l) => l.toUpperCase())
         .trim();
 }

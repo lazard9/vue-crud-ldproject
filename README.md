@@ -46,6 +46,9 @@ The development process was greatly enhanced by assistants such as ChatGPT and W
 - 🧩 Extracted API layer into reusable functions for cleaner separation of concerns and easier backend integration.
 - 📄 Pagination system with flexible `limit` and `postsPerPage` props, supporting both fixed-limit and dynamic per-page modes
   - Also supports filtered views and disables navigation buttons when appropriate.
+- ✅ Unit and component testing setup with **Vitest**, **Vue Test Utils**, and **MSW**
+  - Tests cover core logic, API interactions, and UI components
+  - Dedicated `vite.config.ts` test environment with `import.meta.env` mocking
 
 ---
 
